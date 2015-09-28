@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150928143251) do
+ActiveRecord::Schema.define(version: 20150928162806) do
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -35,9 +35,10 @@ ActiveRecord::Schema.define(version: 20150928143251) do
     t.datetime "avatar_updated_at"
     t.integer  "orientation"
     t.integer  "relationship"
-    t.integer  "kids"
-    t.integer  "drinks"
-    t.integer  "smokes"
+    t.boolean  "kids"
+    t.boolean  "drinks"
+    t.boolean  "smokes"
+    t.string   "location"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

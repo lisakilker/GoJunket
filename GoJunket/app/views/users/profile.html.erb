@@ -1,21 +1,25 @@
-<h2>Howdy, <%= current_user.name.capitalize %>!</h2>
+<h2>Howdy, <%= current_user.name.upcase %>!</h2>
 
 <p><%= current_user.avatar %></p>
 
-<p>Location</p>
+<p>Current City<br><%= current_user.location %></p>
 
-<p>Birthday <%= current_user.date_of_birth %></p>
+<p><%= current_user.age %> years old</p>
 
 <p><%= current_user.gender.capitalize %></p>
 
-<p>Orientation <%= current_user.orientation %></p>
-<p>Relationship status <%= current_user.relationship %></p>
-<p>Has kids <%= current_user.kids %></p>
-<p>Drinks <%= current_user.drinks %></p>
-<p>Smokes <%= current_user.smokes %></p>
-<p>Websites</p>
+<p><%= current_user.relationship.capitalize %></p>
+
+<p><%= current_user.orientation.capitalize %></p>
+
+<p>Has kids<br><%= current_user.kids ? "Yes" : "No" %></p>
+
+<p>Drinks<br><%= current_user.drinks ? "Yes" : "No" %></p>
+
+<p>Smokes<br><%= current_user.smokes ? "Yes" : "No" %></p>
+<!-- <p>Websites</p>
 <p>Interests</p>
 
-<p>A wee bit about me</p>
+<p>A wee bit about me</p> -->
 
 <%= link_to("Edit my profile", edit_user_registration_path)%>
