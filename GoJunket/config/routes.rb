@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   devise_for :users
-  get 'profile', to: 'users#profile'
+  get 'profile', to: 'users#new'
   root to: 'users#profile'
 end
 
