@@ -1,0 +1,5 @@
+<p>Howdy <%= @resource.email %>!</p>
+
+<p>We've locked you out of your account for your own protection since it appears you've been trying to log in with the wrong password far too many times.  It's always better to be safe rather than sorry in these situations, right?</p>
+
+<p><%= link_to 'Unlock my account!', unlock_url(@resource, unlock_token: @token) %></p>

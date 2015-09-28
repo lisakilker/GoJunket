@@ -1,0 +1,5 @@
+<p>Howdy, <%= @email %>!</p>
+
+<p>You've made a wise choice deciding to join GoJunket.  Your social life will be taken to levels of awesome you didn't even know were possible.  Confirm below to get the party started.</p>
+
+<p><%= link_to 'Yes, change my life!', confirmation_url(@resource, confirmation_token: @token) %></p>

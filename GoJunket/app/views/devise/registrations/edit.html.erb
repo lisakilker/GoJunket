@@ -1,0 +1,111 @@
+<h2>Make your profile more snazzy, <%= current_user.name.capitalize %>!</h2>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'form-horizontal'}) do |f| %>
+  <%= devise_error_messages! %>
+
+<div class="form-group">
+  <%= f.label :avatar, class: 'col-sm-2 control-label'  %>
+<div class="col-sm-6">
+  <%= f.file_field :avatar %>
+</div>
+</div>
+
+<div class="field">
+  <%= f.label :name %><br />
+  <%= f.text_field :name, autofocus: true %>
+</div>
+
+<div class="form-group">
+  <%= f.label :date_of_birth, class: 'col-sm-2 control-label'  %>
+<div class="col-sm-6">
+  <%= f.date_select :date_of_birth, start_year: 1920, end_year: 2000, class: 'form-control'  %>
+</div>
+</div>
+
+<div class="form-group">
+  <%= f.label :is_female, "Gender?", class: 'col-sm-2 control-label'  %> <em>(Select the gender you identify as)</em>
+<div class="col-sm-6">
+  <%= f.radio_button :gender, :Female %> <%= f.label :gender, "Female" %>
+  <%= f.radio_button :gender, :Male %> <%= f.label :gender, "Male" %>
+</div>
+</div>
+
+<div class="form-group">
+  <%= f.label :orientation, "Orientation?", class: 'col-sm-2 control-label'  %>
+<div class="col-sm-6">
+  <%= f.radio_button :orientation, :straight %> <%= f.label :orientation, "Straight" %>
+  <%= f.radio_button :orientation, :gay %> <%= f.label :orientation, "Gay" %>
+  <%= f.radio_button :orientation, :bi %> <%= f.label :orientation, "Bi" %>
+  <%= f.radio_button :orientation, :whatever %> <%= f.label :orientation, "Whatever" %>
+</div>
+</div>
+
+<div class="form-group">
+  <%= f.label :relationship, "Relationship Status?", class: 'col-sm-2 control-label'  %>
+<div class="col-sm-6">
+  <%= f.radio_button :relationship, :single %> <%= f.label :relationship, "Single" %>
+  <%= f.radio_button :relationship, :taken %> <%= f.label :relationship, "Taken" %>
+  <%= f.radio_button :relationship, :married %> <%= f.label :relationship, "Married" %>
+</div>
+</div>
+
+<div class="form-group">
+  <%= f.label :kids, "Have kiddos?", class: 'col-sm-2 control-label'  %>
+<div class="col-sm-6">
+  <%= f.radio_button :kids, :yes %> <%= f.label :kids, "Yes" %>
+  <%= f.radio_button :kids, :no %> <%= f.label :kids, "No" %>
+</div>
+</div>
+
+<div class="form-group">
+  <%= f.label :drinks, "Do you drink?", class: 'col-sm-2 control-label'  %>
+<div class="col-sm-6">
+  <%= f.radio_button :drinks, :yes %> <%= f.label :drinks, "Yes" %>
+  <%= f.radio_button :drinks, :no %> <%= f.label :drinks, "No" %>
+</div>
+</div>
+
+<div class="form-group">
+  <%= f.label :smokes, "Do you smoke?", class: 'col-sm-2 control-label'  %>
+<div class="col-sm-6">
+  <%= f.radio_button :smokes, :yes %> <%= f.label :smokes, "Yes" %>
+  <%= f.radio_button :smokes, :no %> <%= f.label :smokes, "No" %>
+</div>
+</div>
+
+<div class="field">
+  <%= f.label :email %><br />
+  <%= f.email_field :email, autofocus: true %>
+</div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+
+<div>We're still waiting for your confirmation: <%= resource.unconfirmed_email %></div>
+
+  <% end %>
+
+<div class="field">
+  <%= f.label :password %> <i>(Go ahead and leave this blank if you don't need to change your password)</i><br />
+  <%= f.password_field :password, autocomplete: "off" %>
+</div>
+
+<div class="field">
+  <%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation, autocomplete: "off" %>
+</div>
+<br>
+<div class="field">
+  <%= f.label :current_password %> <i>(Enter your current password to confirm all your changes)</i><br />
+  <%= f.password_field :current_password, autocomplete: "off" %>
+</div>
+
+<div class="actions">
+  <%= f.submit "Update" %>
+</div>
+
+<% end %>
+
+
+<p><%= button_to "Deactivate my account", registration_path(resource_name), data: { confirm: "Are you absolutey, positively sure you want to close your account?" }, method: :delete %></p>
+
+ 

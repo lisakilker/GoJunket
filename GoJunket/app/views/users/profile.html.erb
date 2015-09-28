@@ -1,0 +1,21 @@
+<h2>Howdy, <%= current_user.name.capitalize %>!</h2>
+
+<p><%= current_user.avatar %></p>
+
+<p>Location</p>
+
+<p>Birthday <%= current_user.date_of_birth %></p>
+
+<p><%= current_user.gender.capitalize %></p>
+
+<p>Orientation <%= current_user.orientation %></p>
+<p>Relationship status <%= current_user.relationship %></p>
+<p>Has kids <%= current_user.kids %></p>
+<p>Drinks <%= current_user.drinks %></p>
+<p>Smokes <%= current_user.smokes %></p>
+<p>Websites</p>
+<p>Interests</p>
+
+<p>A wee bit about me</p>
+
+<%= link_to("Edit my profile", edit_user_registration_path)%>
