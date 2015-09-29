@@ -3,7 +3,7 @@
   <%= devise_error_messages! %>
 
 <div class="form-group">
-  <%= f.label :avatar, class: 'col-sm-2 control-label'  %>
+  <%= f.label :avatar, "Profile pic", class: 'col-sm-2 control-label'  %>
 <div class="col-sm-6">
   <%= f.file_field :avatar %>
 </div>
@@ -22,7 +22,7 @@
 <div class="form-group">
   <%= f.label :date_of_birth, class: 'col-sm-2 control-label'  %>
 <div class="col-sm-6">
-  <%= f.date_select :date_of_birth, start_year: 1920, end_year: 2000, class: 'form-control'  %>
+  <%= f.date_select :date_of_birth, start_year: 1920, end_year: 1997, class: 'form-control'  %>
 </div>
 </div>
 <br>
@@ -31,6 +31,16 @@
 <div class="col-sm-6">
   <%= f.radio_button :gender, :Female %> <%= f.label :gender, "Female" %>
   <%= f.radio_button :gender, :Male %> <%= f.label :gender, "Male" %>
+</div>
+</div>
+<br>
+
+<div class="form-group">
+  <%= f.label :language, "What languages do you speak?", class: 'col-sm-2 control-label'  %>
+<div class="col-sm-6">
+  <% User.languages.keys.each do |key| %>
+    <%= f.check_box :language %> <%= f.label key %>
+  <% end %>
 </div>
 </div>
 <br>
@@ -52,6 +62,18 @@
   <%= f.radio_button :orientation, :gay %> <%= f.label :orientation, "Gay" %>
   <%= f.radio_button :orientation, :bi %> <%= f.label :orientation, "Bi" %>
   <%= f.radio_button :orientation, :whatever %> <%= f.label :orientation, "Whatever" %>
+</div>
+</div>
+<br>
+
+<div class="form-group">
+  <%= f.label :education, "What's your highest level of completed education?", class: 'col-sm-2 control-label'  %>
+<div class="col-sm-6">
+  <%= f.radio_button :education, :high_school %> <%= f.label :education, "High School" %>
+  <%= f.radio_button :education, :course_certification %> <%= f.label :education, "Course Certification" %>
+  <%= f.radio_button :education, :college %> <%= f.label :education, "College" %>
+  <%= f.radio_button :education, :grad_school %> <%= f.label :education, "Grad School" %>
+  <%= f.radio_button :education, :phd %> <%= f.label :education, "PhD" %>
 </div>
 </div>
 <br>
@@ -82,15 +104,15 @@
 <br>
 
 <div class="form-group">
-  <%= f.label :interests, "What's your thing?", class: 'col-sm-2 control-label'  %>
+  <%= f.label :interests, "What do you geek out on?", class: 'col-sm-2 control-label'  %>
 <div class="col-sm-6">
-  <%= f.radio_button :interests, :casual_sex %> <%= f.label :interests, "casual" %>
-  <%= f.radio_button :interests, :food %> <%= f.label :interests, "food" %>
-  <%= f.radio_button :interests, :cooking %> <%= f.label :interests, "cooking" %>
-  <%= f.radio_button :interests, :drinking %> <%= f.label :interests, "drinking" %>
+  <% User.interests.keys.each do |key| %>
+    <%= f.check_box :interests %> <%= f.label key %>
+  <% end %>
 </div>
 </div>
 <br>
+
 <div class="field">
   <%= f.label :description %><em>(You have 500 characters, go!)</em><br />
   <%= f.text_area :description, autofocus: true, :maxlength=>500 %>

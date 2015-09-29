@@ -11,4 +11,9 @@ class UsersController < ApplicationController
   	@user = current_user
   	render 'users/edit'
   end
+
+  def home
+    @user = current_user
+    render :home
+  end
 end

@@ -4,17 +4,17 @@ en:
   devise:
     confirmations:
       confirmed: "Your email address has been successfully confirmed."
-      send_instructions: "Check your Email inbox.  We just sent you a confirmation email with instructions on how to activate."
+      send_instructions: "Check your Email inbox.  We just sent you a confirmation email with instructions on how to activate your GoJunket account."
       send_paranoid_instructions: "If your email address already exists in GoJunket, you will receive a conformation email with instructions on how to confirm."
     failure:
       already_authenticated: "You are already logged in, silly goose."
-      inactive: "Your account is not activated yet.  Did you confirm via the email we sent you?  If no, check your Emails or email us at GoJunket@gmail.com."
+      inactive: "Your account is not activated yet.  Did you confirm via the email we sent you?  If not, check your Emails or email us at GoJunket@gmail.com."
       invalid: "Invalid %{authentication_keys} or password."
-      locked: "Your account is locked."
-      last_attempt: "Dude, did you forget your password?  You only have one more attempt to login before we lock you out of your account."
+      locked: "Your account is locked, sorry man."
+      last_attempt: "Dude, did you forget your password?  You only have one more attempt to login before we lock you out of your account.  Choose wisely!"
       not_found_in_database: "Invalid %{authentication_keys} or password."
       timeout: "Did you fall asleep at your computer?  Your session expired. Sign in again."
-      unauthenticated: "Hmm, you cannot do that unless you are logged in."
+      unauthenticated: "Oops! You can't do that unless you are logged in."
       unconfirmed: "You have to confirm your email address before doing that."
     mailer:
       confirmation_instructions:
@@ -27,14 +27,14 @@ en:
       failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
       success: "Successfully authenticated from %{kind} account."
     passwords:
-      no_token: "You can't access this page without being directed from a password reset email. If you did come from a password reset email, please make sure you used the full URL provided."
+      no_token: "What are you trying to do?  You can't access this page without being directed from a password reset email. If you did come from a password reset email, please make sure you used the full URL provided."
       send_instructions: "You will receive an email with instructions on how to reset your password in a few minutes."
       send_paranoid_instructions: "If your email address already exists in GoJunket, we'll send you a password reset email.  Check your inbox."
       updated: "Your password has been changed.  You can now login and meet other GoJunkies."
       updated_not_active: "Your password has been changed successfully."
     registrations:
       destroyed: "Ciao Cacao!  Your account has been deleted.  If you change your mind, we'll take you back... unlike your ex."
-      signed_up: "Howdy!  You are officially a GoJunkie.  Your quality of life has just improved dramatically."
+      signed_up: "Bonjour!  You are officially a GoJunkie!  Your quality of life has just improved dramatically."
       signed_up_but_inactive: "You're officially a GoJunket member, but you still need to confirm your account via the email we sent you before you can login."
       signed_up_but_locked: "You're officially a GoJunket member, but we cannot allow you to sign in because your account is locked.  We sent you an email with instructions on how to unlock your account.  Check your email or contact us at GoJunket@gmail.com."
       signed_up_but_unconfirmed: "A confirmation email has been sent to you. You'll need to confirm your account before continuing on.  Go check your email inbox.  Now.  Do it."
@@ -55,5 +55,5 @@ en:
       not_found: "totally not found"
       not_locked: "totally was not locked"
       not_saved:
-        one: "1 error prohibited this %{resource} from being saved:"
-        other: "%{count} errors prohibited this %{resource} from being saved:"
+        one: "Oops, you seemed to have forgotten something!"
+        other: "Oops, you've forgotten to enter %{count} things!"
