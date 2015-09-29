@@ -1,0 +1,19 @@
+<div class="form-group">
+  <%= f.label :language, "What languages do you speak?", class: 'col-sm-2 control-label'  %>
+<div class="col-sm-6">
+  <% User.languages.keys.each do |key| %>
+    <%= f.check_box :language %> <%= f.label key %>
+  <% end %>
+</div>
+</div>
+<br>
+
+<div class="form-group">
+  <%= f.label :interests, "What do you geek out on?", class: 'col-sm-2 control-label'  %>
+<div class="col-sm-6">
+  <% User.interests.keys.each do |key| %>
+    <%= f.check_box :interests %> <%= f.label key %>
+  <% end %>
+</div>
+</div>
+<br>
