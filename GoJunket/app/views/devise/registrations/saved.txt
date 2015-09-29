@@ -17,3 +17,8 @@
 </div>
 </div>
 <br>
+
+<div class="field">
+     <%= f.check_box :languages, {}, true %> <%= f.label :languages, "English" %> 
+     <%= f.check_box :languages, {}, true %> <%= f.label :languages, "Spanish" %> 
+ <%= f.check_box :languages, {}, true %> <%= f.label :languages, "Chinese" %> </div>
