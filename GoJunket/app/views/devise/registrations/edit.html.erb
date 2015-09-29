@@ -80,6 +80,22 @@
 </div>
 </div>
 <br>
+
+<div class="form-group">
+  <%= f.label :interests, "What's your thing?", class: 'col-sm-2 control-label'  %>
+<div class="col-sm-6">
+  <%= f.radio_button :interests, :casual_sex %> <%= f.label :interests, "casual" %>
+  <%= f.radio_button :interests, :food %> <%= f.label :interests, "food" %>
+  <%= f.radio_button :interests, :cooking %> <%= f.label :interests, "cooking" %>
+  <%= f.radio_button :interests, :drinking %> <%= f.label :interests, "drinking" %>
+</div>
+</div>
+<br>
+<div class="field">
+  <%= f.label :description %><em>(You have 500 characters, go!)</em><br />
+  <%= f.text_area :description, autofocus: true, :maxlength=>500 %>
+</div>
+<br>
 <div class="field">
   <%= f.label :email, "Update email" %><br />
   <%= f.email_field :email, autofocus: true %>

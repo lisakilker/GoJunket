@@ -18,8 +18,10 @@
 
 <p>Smokes<br><%= current_user.smokes ? "Yes" : "No" %></p>
 <!-- <p>Websites</p>
-<p>Interests</p>
+<p>Interests</p> -->
 
-<p>A wee bit about me</p> -->
+<p>Interests<br><%= current_user.interests.capitalize %></p>
+
+<p>The 411 on me:<br><%= current_user.description %></p>
 
 <%= link_to("Edit my profile", edit_user_registration_path)%>

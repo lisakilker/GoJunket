@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
 	enum orientation: [:Straight, :Gay, :Bi, :Whatever, :straight, :gay, :bi, :whatever]
 	enum relationship: [:Single, :Taken, :Married, :single, :taken, :married]
 
+	enum interests: [:Animals, :Astrology, :Astronomy, :Baseball, :Basketball, :Board_Games, :Board_Sports, :Boxing, :Casual_Sex, :Cats, :Computer_Programming, :Cooking, :Cosplay, :Cycling, :Dance, :Drama, :Drawing_and_Painting, :Drinking, :Dogs, :Eating, :Fashion, :Fishing, :Food, :Football, :Gambling, :Gaming, :Hooping, :Hunting, :Internet, :Jogging, :Legos, :Magic, :Martial_Arts, :Movies, :Music, :Napping, :Paintball, :Photography, :Pilates, :Puzzles, :Reading, :Religion, :Rock_Climbing, :Sailing, :Sarcasm, :Shooting, :Skateboarding, :Skiing, :Snowboarding, :Soccer, :Sports_General, :Surfing, :Swimming, :Technology, :Travel, :Video_Games, :Writing, :Work, :Yoga, :animals, :astrology, :astronomy, :baseball, :basketball, :board_games, :board_sports, :boxing, :casual_sex, :cats, :computer_programming, :cooking, :cosplay, :cycling, :dance, :drama, :drawing_and_painting, :drinking, :dogs, :eating, :fashion, :fishing, :food, :football, :gambling, :gaming, :hooping, :hunting, :internet, :jogging, :legos, :magic, :martial_arts, :movies, :music, :napping, :paintball, :photography, :pilates, :puzzles, :reading, :religion, :rock_climbing, :sailing, :sarcasm, :shooting, :skateboarding, :skiing, :snowboarding, :soccer, :sports_general, :surfing, :swimming, :technology, :travel, :video_games, :writing, :work, :yoga]
 
 	def age
 		age = Date.today.year - date_of_birth.year
