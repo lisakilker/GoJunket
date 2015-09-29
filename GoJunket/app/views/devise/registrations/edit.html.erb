@@ -19,13 +19,7 @@
   <%= f.text_field :location, autofocus: true %>
 </div>
 <br>
-<div class="form-group">
-  <%= f.label :date_of_birth, class: 'col-sm-2 control-label'  %>
-<div class="col-sm-6">
-  <%= f.date_select :date_of_birth, start_year: 1920, end_year: 1997, class: 'form-control'  %>
-</div>
-</div>
-<br>
+
 <div class="form-group">
   <%= f.label :is_female, "Gender", class: 'col-sm-2 control-label'  %> <em>(Select the gender you identify as)</em>
 <div class="col-sm-6">
@@ -34,6 +28,15 @@
 </div>
 </div>
 <br>
+
+<div class="form-group">
+  <%= f.label :date_of_birth, class: 'col-sm-2 control-label'  %>
+<div class="col-sm-6">
+  <%= f.date_select :date_of_birth, start_year: 1920, end_year: 1997, class: 'form-control'  %>
+</div>
+</div>
+<br>
+
 
 <div class="form-group">
   <%= f.label :language, "What languages do you speak?", class: 'col-sm-2 control-label'  %>

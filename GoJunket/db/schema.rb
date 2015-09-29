@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20150929130619) do
     t.boolean  "smokes"
     t.string   "location"
     t.string   "description"
-    t.integer  "interests"
+    t.string   "interests"
     t.integer  "education"
     t.string   "language"
   end
