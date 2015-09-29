@@ -13660,3 +13660,17 @@ Processing by UsersController#home as HTML
   [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
   Rendered users/home.html.erb within layouts/application (0.1ms)
 Completed 200 OK in 49ms (Views: 47.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/profile" for ::1 at 2015-09-29 19:26:30 +0200
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered users/profile.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 36ms (Views: 34.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/profile" for ::1 at 2015-09-29 19:30:56 +0200
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered users/profile.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 45ms (Views: 43.9ms | ActiveRecord: 0.1ms)
