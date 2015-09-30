@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  
+
   devise_for :users
+  resources :users, only: [:show, :index]
   get 'profile', to: 'users#profile'
   root to: 'users#home'
   get 'home', to: 'users#home'

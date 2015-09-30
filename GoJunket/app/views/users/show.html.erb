@@ -1,0 +1,29 @@
+<h2>Wanna GoJunket with <%= @user.name %>?</h2>
+
+<p><%= @user.avatar %></p>
+
+<p>Email:  <%= @user.email %></p>
+
+<p>Current Location:  <%= @user.location %>, <%= @user.state %></p>
+
+<p>Sex:  <%= @user.gender %></p>
+
+<p>Age: <%= @user.age %> years old</p>
+
+<p>Relationship Status: <%= @user.relationship %></p>
+
+<p>Orientation:  <%= @user.orientation %></p>
+
+<p>Education:  <%= @user.education.humanize %></p>
+
+<p>Kids?  <%= @user.kids ? "Yup" : "Nope" %></p>
+
+<p>Drinks?  <%= @user.drinks ? "Yup" : "Nope" %></p>
+
+<p>Smokes?  <%= @user.smokes ? "Yup" : "Nope" %></p>
+
+<p>Interests:<br><%= @user.interests.map {|int| int.name}  %></p>
+
+<p>The 411 on me: <%= @user.description %></p>
+
+<%= link_to 'Back', :back %>

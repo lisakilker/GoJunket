@@ -2,26 +2,28 @@
 
 <p><%= current_user.avatar %></p>
 
-<p>Location<br><%= current_user.location.upcase %>, <%= current_user.state.upcase %></p>
+<p>Email:  <%= current_user.email %></p>
 
-<p><%= current_user.gender.capitalize %></p>
+<p>Current Location:  <%= current_user.location %>, <%= current_user.state %></p>
 
-<p><%= current_user.age %> years old</p>
+<p>Sex:  <%= current_user.gender %></p>
 
-<p><%= current_user.relationship.capitalize %></p>
+<p>Age: <%= current_user.age %> years old</p>
 
-<p><%= current_user.orientation.capitalize %></p>
+<p>Relationship Status: <%= current_user.relationship %></p>
 
-<p><%= current_user.education.capitalize %></p>
+<p>Orientation:  <%= current_user.orientation %></p>
 
-<p>Has kids<br><%= current_user.kids ? "Yes" : "No" %></p>
+<p>Education:  <%= current_user.education.humanize %></p>
 
-<p>Drinks<br><%= current_user.drinks ? "Yes" : "No" %></p>
+<p>Kids?  <%= current_user.kids ? "Yup" : "Nope" %></p>
 
-<p>Smokes<br><%= current_user.smokes ? "Yes" : "No" %></p>
+<p>Drinks?  <%= current_user.drinks ? "Yup" : "Nope" %></p>
 
-<p>Interests<br><%= current_user.interests.map {|int| int.name}  %></p>
+<p>Smokes?  <%= current_user.smokes ? "Yup" : "Nope" %></p>
 
-<p>The 411 on me:<br><%= current_user.description %></p>
+<p>Interests:<br><%= current_user.interests.map {|int| int.name}  %></p>
+
+<p>The 411 on me: <%= current_user.description %></p>
 
 <%= link_to("Edit my profile", edit_user_registration_path)%>

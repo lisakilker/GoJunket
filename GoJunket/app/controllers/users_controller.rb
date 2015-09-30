@@ -16,4 +16,22 @@ class UsersController < ApplicationController
     @user = current_user
     render :home
   end
+
+  def update
+    @user = current_user
+      binding.pry
+  end
+
+  def show
+    @user = User.find_by_id(params[:id])
+  end
+
+  def index
+    @users = User.all
+    if params[:search]
+      @users = User.search(params[:search]).shuffle
+    else
+      @users = User.all.shuffle
+    end
+  end
 end
