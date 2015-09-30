@@ -17,11 +17,6 @@ class UsersController < ApplicationController
     render :home
   end
 
-  def update
-    @user = current_user
-      binding.pry
-  end
-
   def show
     @user = User.find_by_id(params[:id])
   end
