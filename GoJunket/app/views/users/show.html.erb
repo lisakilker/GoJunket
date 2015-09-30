@@ -1,6 +1,6 @@
 <h2>Wanna GoJunket with <%= @user.name %>?</h2>
 
-<p><%= @user.avatar %></p>
+<p><%= image_tag @user.avatar.url(:medium) %></p>
 
 <p>Email:  <%= @user.email %></p>
 
@@ -24,6 +24,6 @@
 
 <p>Interests:<br><%= @user.interests.map {|int| int.name}  %></p>
 
-<p>The 411 on me: <%= @user.description %></p>
+<p>The 411 on me:<br><%= @user.description %></p>
 
 <%= link_to 'Back', :back %>

@@ -1,6 +1,6 @@
 <h2>Howdy, <%= current_user.name.upcase %>!</h2>
 
-<p><%= current_user.avatar %></p>
+<p><%= image_tag current_user.avatar.url(:thumb) %></p>
 
 <p>Email:  <%= current_user.email %></p>
 
@@ -10,9 +10,9 @@
 
 <p>Age: <%= current_user.age %> years old</p>
 
-<p>Relationship Status: <%= current_user.relationship %></p>
+<p>Relationship Status: <%= current_user.relationship.humanize %></p>
 
-<p>Orientation:  <%= current_user.orientation %></p>
+<p>Orientation:  <%= current_user.orientation.humanize %></p>
 
 <p>Education:  <%= current_user.education.humanize %></p>
 
@@ -27,6 +27,6 @@
 <% end %>
 </p>
 
-<p>The 411 on me: <%= current_user.description %></p>
+<p>The 411 on me:<br><%= current_user.description %></p>
 
 <%= link_to("Edit my profile", edit_user_registration_path)%>
