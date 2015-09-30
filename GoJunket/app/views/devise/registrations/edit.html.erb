@@ -14,9 +14,14 @@
   <%= f.text_field :name, autofocus: true %>
 </div>
 <br>
+
 <div class="field">
-  <%= f.label :location, "Current City" %><br />
+  <%= f.label :location, "City" %><br />
   <%= f.text_field :location, autofocus: true %>
+</div>
+<div class="field">
+  <%= f.label :state, "State" %> <em>(Two letter abbreviation)</em><br />
+  <%= f.text_field :state, autofocus: true, :maxlength=>2 %>
 </div>
 <br>
 
@@ -36,8 +41,6 @@
 </div>
 </div>
 <br>
-
-
 
 <div class="form-group">
   <%= f.label :relationship, "What's your situation?", class: 'col-sm-2 control-label'  %>
@@ -99,7 +102,6 @@
 
  <div>Interests<br>
  <% Interest.all.each do |int| %>
-
  <%= check_box_tag "user_interests_ids_#{int.id}", int.id, (f.object.interests.present? && f.object.interests.include?(int.id)), {:name => "user[interests_ids][]"} %>
  <%= label_tag "user_interests_ids_#{int.id}", int.name %>
  <% end %>

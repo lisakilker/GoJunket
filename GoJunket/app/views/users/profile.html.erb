@@ -2,7 +2,7 @@
 
 <p><%= current_user.avatar %></p>
 
-<p>Current City<br><%= current_user.location %></p>
+<p>Location<br><%= current_user.location.upcase %>, <%= current_user.state.upcase %></p>
 
 <p><%= current_user.gender.capitalize %></p>
 

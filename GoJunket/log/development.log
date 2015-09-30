@@ -17160,3 +17160,1019 @@ Processing by UsersController#profile as HTML
   [1m[36mInterest Load (0.1ms)[0m  [1mSELECT "interests".* FROM "interests" INNER JOIN "interests_users" ON "interests"."id" = "interests_users"."interest_id" WHERE "interests_users"."user_id" = ?[0m  [["user_id", 1]]
   Rendered users/profile.html.erb within layouts/application (2.8ms)
 Completed 200 OK in 57ms (Views: 55.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/profile" for ::1 at 2015-09-30 12:59:43 +0200
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mInterest Load (0.2ms)[0m  [1mSELECT "interests".* FROM "interests" INNER JOIN "interests_users" ON "interests"."id" = "interests_users"."interest_id" WHERE "interests_users"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/profile.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 118ms (Views: 115.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/profile" for ::1 at 2015-09-30 13:00:45 +0200
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mInterest Load (0.1ms)[0m  [1mSELECT "interests".* FROM "interests" INNER JOIN "interests_users" ON "interests"."id" = "interests_users"."interest_id" WHERE "interests_users"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/profile.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 54ms (Views: 52.5ms | ActiveRecord: 0.3ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddStateToUser (20150930110145)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150930110145"]]
+  [1m[35m (2.6ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+
+
+Started GET "/profile" for ::1 at 2015-09-30 13:03:20 +0200
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mInterest Load (0.1ms)[0m  SELECT "interests".* FROM "interests" INNER JOIN "interests_users" ON "interests"."id" = "interests_users"."interest_id" WHERE "interests_users"."user_id" = ?  [["user_id", 1]]
+  Rendered users/profile.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 93ms (Views: 66.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/edit" for ::1 at 2015-09-30 13:03:21 +0200
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (13.4ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `state' for #<User:0x007fb7737e5ea0>):
+    17: 
+    18: <div class="field">
+    19:   <%= f.label :state, "Current City" %><br />
+    20:   <%= f.text_field :state, autofocus: true, :maxlength=>2 %>
+    21: </div>
+    22: <br>
+    23: <div class="field">
+  app/views/devise/registrations/edit.html.erb:20:in `block in _app_views_devise_registrations_edit_html_erb___2960398567258946280_70212946686700'
+  app/views/devise/registrations/edit.html.erb:2:in `_app_views_devise_registrations_edit_html_erb___2960398567258946280_70212946686700'
+
+
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.2ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.4ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (79.6ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (106.1ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (198.1ms)
+
+
+Started GET "/users/edit" for ::1 at 2015-09-30 13:03:22 +0200
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (5.4ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined method `state' for #<User:0x007fb773397e48>):
+    17: 
+    18: <div class="field">
+    19:   <%= f.label :state, "Current City" %><br />
+    20:   <%= f.text_field :state, autofocus: true, :maxlength=>2 %>
+    21: </div>
+    22: <br>
+    23: <div class="field">
+  app/views/devise/registrations/edit.html.erb:20:in `block in _app_views_devise_registrations_edit_html_erb___2960398567258946280_70212944439720'
+  app/views/devise/registrations/edit.html.erb:2:in `_app_views_devise_registrations_edit_html_erb___2960398567258946280_70212944439720'
+
+
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.1ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (50.2ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (45.7ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (101.2ms)
+
+
+Started GET "/users/edit" for ::1 at 2015-09-30 13:04:09 +0200
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (4.9ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.7ms)
+
+ActionView::Template::Error (undefined method `state' for #<User:0x007fb771da0bf8>):
+    17: 
+    18: <div class="field">
+    19:   <%= f.label :state, "Current City" %><br />
+    20:   <%= f.text_field :state, autofocus: true, :maxlength=>2 %>
+    21: </div>
+    22: <br>
+    23: <div class="field">
+  app/views/devise/registrations/edit.html.erb:20:in `block in _app_views_devise_registrations_edit_html_erb___2960398567258946280_70212944439720'
+  app/views/devise/registrations/edit.html.erb:2:in `_app_views_devise_registrations_edit_html_erb___2960398567258946280_70212944439720'
+
+
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.0ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (50.2ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (38.2ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (97.4ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+
+
+Started GET "/users/edit" for ::1 at 2015-09-30 13:05:20 +0200
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (4.1ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.9ms)
+
+ActionView::Template::Error (undefined method `state' for #<User:0x007fb7748e8770>):
+    17: 
+    18: <div class="field">
+    19:   <%= f.label :state, "Current City" %><br />
+    20:   <%= f.text_field :state, autofocus: true, :maxlength=>2 %>
+    21: </div>
+    22: <br>
+    23: <div class="field">
+  app/views/devise/registrations/edit.html.erb:20:in `block in _app_views_devise_registrations_edit_html_erb___2960398567258946280_70212944439720'
+  app/views/devise/registrations/edit.html.erb:2:in `_app_views_devise_registrations_edit_html_erb___2960398567258946280_70212944439720'
+
+
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.5ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.2ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (97.1ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (59.1ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (139.3ms)
+  [1m[36m (3.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (3.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to DeviseCreateUsers (20150924165311)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150924165311"]]
+  [1m[36m (2.9ms)[0m  [1mcommit transaction[0m
+Migrating to AddNameToUsers (20150924170809)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "users" ADD "name" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150924170809"]]
+  [1m[36m (3.0ms)[0m  [1mcommit transaction[0m
+Migrating to AddGenderToUsers (20150925145739)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "users" ADD "gender" integer[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150925145739"]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+Migrating to AddDateOfBirthToUsers (20150925145827)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "users" ADD "date_of_birth" date[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150925145827"]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+Migrating to AddAttachmentAvatarToUsers (20150925153750)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "users" ADD "avatar_file_name" varchar[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "avatar_content_type" varchar
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "users" ADD "avatar_file_size" integer[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "avatar_updated_at" datetime
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150925153750"]]
+  [1m[35m (2.4ms)[0m  commit transaction
+Migrating to AddOrientationToUser (20150928143155)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD "orientation" integer
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150928143155"]]
+  [1m[35m (2.9ms)[0m  commit transaction
+Migrating to AddRelationshipToUser (20150928143212)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD "relationship" integer
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150928143212"]]
+  [1m[35m (2.8ms)[0m  commit transaction
+Migrating to AddKidsToUser (20150928143220)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD "kids" boolean
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150928143220"]]
+  [1m[35m (2.7ms)[0m  commit transaction
+Migrating to AddDrinksToUser (20150928143243)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "users" ADD "drinks" boolean
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150928143243"]]
+  [1m[35m (2.6ms)[0m  commit transaction
+Migrating to AddSmokesToUser (20150928143251)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "users" ADD "smokes" boolean
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150928143251"]]
+  [1m[35m (2.7ms)[0m  commit transaction
+Migrating to AddLocationToUser (20150928162806)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "users" ADD "location" varchar
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150928162806"]]
+  [1m[35m (2.9ms)[0m  commit transaction
+Migrating to AddDescriptionToUser (20150929091822)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "users" ADD "description" varchar
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150929091822"]]
+  [1m[35m (2.5ms)[0m  commit transaction
+Migrating to AddInterestsToUser (20150929095322)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD "interests" varchar
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150929095322"]]
+  [1m[35m (2.6ms)[0m  commit transaction
+Migrating to AddEducationToUser (20150929125857)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD "education" integer
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150929125857"]]
+  [1m[35m (2.9ms)[0m  commit transaction
+Migrating to AddLanguageToUser (20150929130619)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD "language" varchar
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150929130619"]]
+  [1m[35m (3.3ms)[0m  commit transaction
+Migrating to CreateInterests (20150929164115)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "interests" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "interests" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150929164115"]]
+  [1m[35m (2.8ms)[0m  commit transaction
+Migrating to CreateLanguages (20150929164129)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "languages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "languages" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150929164129"]]
+  [1m[35m (2.6ms)[0m  commit transaction
+Migrating to DropColumnInterestsForInterests (20150930090314)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TEMPORARY TABLE "ainterests" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "interests" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mSELECT * FROM "interests"[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "interests"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "interests" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  SELECT * FROM "ainterests"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "ainterests"[0m
+  [1m[35m (0.1ms)[0m  CREATE TEMPORARY TABLE "alanguages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "languages" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "languages"[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "languages"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "languages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "alanguages"
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "alanguages"[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150930090314"]]
+  [1m[36m (3.0ms)[0m  [1mcommit transaction[0m
+Migrating to AddNameToInterests (20150930090524)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "interests" ADD "name" varchar[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "languages" ADD "name" varchar
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150930090524"]]
+  [1m[35m (2.6ms)[0m  commit transaction
+Migrating to CreateTableInterestsUsers (20150930094950)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "interests_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "interest_id" integer) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150930094950"]]
+  [1m[35m (2.7ms)[0m  commit transaction
+Migrating to AddStateToUser (20150930110145)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD "state" varchar
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150930110145"]]
+  [1m[35m (3.2ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+
+
+Started GET "/" for ::1 at 2015-09-30 13:06:47 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#home as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 401 Unauthorized in 41ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2015-09-30 13:06:47 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (64.8ms)
+Completed 200 OK in 347ms (Views: 326.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2015-09-30 13:06:49 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 51ms (Views: 50.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2015-09-30 13:07:00 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1JP+PTj/h0yu+Ch1EpfSst73mZSMaeP4VzjLt6otmx07HAttRdvpohCDmLnzX4cuCRVMOfjaC6f5B+PwXSVlxA==", "user"=>{"name"=>"Jennifer McFly", "email"=>"j@gmail.com", "date_of_birth(1i)"=>"1920", "date_of_birth(2i)"=>"9", "date_of_birth(3i)"=>"30", "gender"=>"female", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'j@gmail.com' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("name", "email", "encrypted_password", "gender", "date_of_birth", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Jennifer McFly"], ["email", "j@gmail.com"], ["encrypted_password", "$2a$10$pIFM7XV/CJVR3Yyif87KoeW2iPkAF0aoAmvy1qFU82VGYwrm9TBkq"], ["gender", 3], ["date_of_birth", "1920-09-30"], ["created_at", "2015-09-30 11:07:00.279262"], ["updated_at", "2015-09-30 11:07:00.279262"]]
+  [1m[35m (2.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2015-09-30 11:07:00.285644"], ["current_sign_in_at", "2015-09-30 11:07:00.285644"], ["last_sign_in_ip", "::1"], ["current_sign_in_ip", "::1"], ["sign_in_count", 1], ["updated_at", "2015-09-30 11:07:00.286573"], ["id", 1]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 169ms (ActiveRecord: 6.8ms)
+
+
+Started GET "/" for ::1 at 2015-09-30 13:07:00 +0200
+Processing by UsersController#home as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered users/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 38ms (Views: 36.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/profile" for ::1 at 2015-09-30 13:07:01 +0200
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered users/profile.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined method `upcase' for nil:NilClass):
+    2: 
+    3: <p><%= current_user.avatar %></p>
+    4: 
+    5: <p>State<br><%= current_user.state.upcase %></p>
+    6: 
+    7: <p>City<br><%= current_user.location.upcase %></p>
+    8: 
+  app/views/users/profile.html.erb:5:in `_app_views_users_profile_html_erb__2525565124714675567_70323171894040'
+  app/controllers/users_controller.rb:7:in `profile'
+
+
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.8ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (67.9ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.2ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (47.0ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (106.9ms)
+
+
+Started GET "/profile" for ::1 at 2015-09-30 13:07:02 +0200
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered users/profile.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined method `upcase' for nil:NilClass):
+    2: 
+    3: <p><%= current_user.avatar %></p>
+    4: 
+    5: <p>State<br><%= current_user.state.upcase %></p>
+    6: 
+    7: <p>City<br><%= current_user.location.upcase %></p>
+    8: 
+  app/views/users/profile.html.erb:5:in `_app_views_users_profile_html_erb__2525565124714675567_70323128038260'
+  app/controllers/users_controller.rb:7:in `profile'
+
+
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.2ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (57.3ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (42.8ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (94.4ms)
+
+
+Started GET "/profile" for ::1 at 2015-09-30 13:07:27 +0200
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered users/profile.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined method `capitalize' for nil:NilClass):
+    10: 
+    11: <p><%= current_user.age %> years old</p>
+    12: 
+    13: <p><%= current_user.relationship.capitalize %></p>
+    14: 
+    15: <p><%= current_user.orientation.capitalize %></p>
+    16: 
+  app/views/users/profile.html.erb:13:in `_app_views_users_profile_html_erb__2525565124714675567_70323181918780'
+  app/controllers/users_controller.rb:7:in `profile'
+
+
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.8ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (57.8ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (48.7ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (100.8ms)
+
+
+Started GET "/profile" for ::1 at 2015-09-30 13:07:46 +0200
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mInterest Load (0.3ms)[0m  [1mSELECT "interests".* FROM "interests" INNER JOIN "interests_users" ON "interests"."id" = "interests_users"."interest_id" WHERE "interests_users"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/profile.html.erb within layouts/application (70.0ms)
+Completed 200 OK in 125ms (Views: 122.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/profile" for ::1 at 2015-09-30 13:07:53 +0200
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered users/profile.html.erb within layouts/application (4.1ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined method `upcase' for nil:NilClass):
+    2: 
+    3: <p><%= current_user.avatar %></p>
+    4: 
+    5: <p>State<br><%= current_user.state.upcase %></p>
+    6: 
+    7: <p>City<br><%= current_user.location.upcase %></p>
+    8: 
+  app/views/users/profile.html.erb:5:in `_app_views_users_profile_html_erb__2525565124714675567_70323128530580'
+  app/controllers/users_controller.rb:7:in `profile'
+
+
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (63.4ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (38.0ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (90.2ms)
+
+
+Started GET "/profile" for ::1 at 2015-09-30 13:08:01 +0200
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered users/profile.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined method `capitalize' for nil:NilClass):
+    10: 
+    11: <p><%= current_user.age %> years old</p>
+    12: 
+    13: <p><%= current_user.relationship.capitalize %></p>
+    14: 
+    15: <p><%= current_user.orientation.capitalize %></p>
+    16: 
+  app/views/users/profile.html.erb:13:in `_app_views_users_profile_html_erb__2525565124714675567_70323125393200'
+  app/controllers/users_controller.rb:7:in `profile'
+
+
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.6ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (56.9ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (48.2ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/LisaKilker/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (94.0ms)
+
+
+Started GET "/profile" for ::1 at 2015-09-30 13:08:15 +0200
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mInterest Load (0.1ms)[0m  [1mSELECT "interests".* FROM "interests" INNER JOIN "interests_users" ON "interests"."id" = "interests_users"."interest_id" WHERE "interests_users"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/profile.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 41ms (Views: 39.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for ::1 at 2015-09-30 13:08:16 +0200
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mInterest Load (0.3ms)[0m  [1mSELECT "interests".* FROM "interests"[0m
+  Rendered devise/registrations/edit.html.erb within layouts/application (24.2ms)
+Completed 200 OK in 81ms (Views: 79.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit" for ::1 at 2015-09-30 13:09:20 +0200
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mInterest Load (0.1ms)[0m  [1mSELECT "interests".* FROM "interests"[0m
+  Rendered devise/registrations/edit.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 48ms (Views: 46.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for ::1 at 2015-09-30 13:09:27 +0200
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mInterest Load (0.1ms)[0m  [1mSELECT "interests".* FROM "interests"[0m
+  Rendered devise/registrations/edit.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 51ms (Views: 50.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for ::1 at 2015-09-30 13:09:47 +0200
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mInterest Load (0.2ms)[0m  [1mSELECT "interests".* FROM "interests"[0m
+  Rendered devise/registrations/edit.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 59ms (Views: 57.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit" for ::1 at 2015-09-30 13:09:54 +0200
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mInterest Load (0.2ms)[0m  [1mSELECT "interests".* FROM "interests"[0m
+  Rendered devise/registrations/edit.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 61ms (Views: 59.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit" for ::1 at 2015-09-30 13:10:34 +0200
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mInterest Load (0.2ms)[0m  [1mSELECT "interests".* FROM "interests"[0m
+  Rendered devise/registrations/edit.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 51ms (Views: 49.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit" for ::1 at 2015-09-30 13:10:40 +0200
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mInterest Load (0.1ms)[0m  [1mSELECT "interests".* FROM "interests"[0m
+  Rendered devise/registrations/edit.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 54ms (Views: 52.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for ::1 at 2015-09-30 13:10:57 +0200
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mInterest Load (0.2ms)[0m  [1mSELECT "interests".* FROM "interests"[0m
+  Rendered devise/registrations/edit.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 56ms (Views: 53.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit" for ::1 at 2015-09-30 13:11:14 +0200
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mInterest Load (0.1ms)[0m  [1mSELECT "interests".* FROM "interests"[0m
+  Rendered devise/registrations/edit.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 57ms (Views: 55.3ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'gido@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'mo@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'e@gmail.com' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "languages" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Chinese"], ["created_at", "2015-09-30 11:11:27.287194"], ["updated_at", "2015-09-30 11:11:27.287194"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "languages" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "English"], ["created_at", "2015-09-30 11:11:27.292495"], ["updated_at", "2015-09-30 11:11:27.292495"]]
+  [1m[35m (2.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "languages" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "French"], ["created_at", "2015-09-30 11:11:27.297187"], ["updated_at", "2015-09-30 11:11:27.297187"]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "languages" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "German"], ["created_at", "2015-09-30 11:11:27.301414"], ["updated_at", "2015-09-30 11:11:27.301414"]]
+  [1m[35m (2.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "languages" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Italian"], ["created_at", "2015-09-30 11:11:27.305831"], ["updated_at", "2015-09-30 11:11:27.305831"]]
+  [1m[36m (3.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "languages" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Russian"], ["created_at", "2015-09-30 11:11:27.310758"], ["updated_at", "2015-09-30 11:11:27.310758"]]
+  [1m[35m (4.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "languages" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Spanish"], ["created_at", "2015-09-30 11:11:27.316111"], ["updated_at", "2015-09-30 11:11:27.316111"]]
+  [1m[36m (2.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Animals"], ["created_at", "2015-09-30 11:11:27.327306"], ["updated_at", "2015-09-30 11:11:27.327306"]]
+  [1m[35m (2.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Art"], ["created_at", "2015-09-30 11:11:27.331818"], ["updated_at", "2015-09-30 11:11:27.331818"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Astrology"], ["created_at", "2015-09-30 11:11:27.336763"], ["updated_at", "2015-09-30 11:11:27.336763"]]
+  [1m[35m (2.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Astronomy"], ["created_at", "2015-09-30 11:11:27.341252"], ["updated_at", "2015-09-30 11:11:27.341252"]]
+  [1m[36m (2.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Baseball"], ["created_at", "2015-09-30 11:11:27.345835"], ["updated_at", "2015-09-30 11:11:27.345835"]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Board Games"], ["created_at", "2015-09-30 11:11:27.350401"], ["updated_at", "2015-09-30 11:11:27.350401"]]
+  [1m[36m (2.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Board Sports"], ["created_at", "2015-09-30 11:11:27.355689"], ["updated_at", "2015-09-30 11:11:27.355689"]]
+  [1m[35m (2.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Boxing"], ["created_at", "2015-09-30 11:11:27.360073"], ["updated_at", "2015-09-30 11:11:27.360073"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Casual Sex"], ["created_at", "2015-09-30 11:11:27.362417"], ["updated_at", "2015-09-30 11:11:27.362417"]]
+  [1m[35m (2.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Cats"], ["created_at", "2015-09-30 11:11:27.366649"], ["updated_at", "2015-09-30 11:11:27.366649"]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Computer Programming"], ["created_at", "2015-09-30 11:11:27.371242"], ["updated_at", "2015-09-30 11:11:27.371242"]]
+  [1m[35m (2.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Cooking"], ["created_at", "2015-09-30 11:11:27.375313"], ["updated_at", "2015-09-30 11:11:27.375313"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Cosplay"], ["created_at", "2015-09-30 11:11:27.379503"], ["updated_at", "2015-09-30 11:11:27.379503"]]
+  [1m[35m (2.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Cycling"], ["created_at", "2015-09-30 11:11:27.383889"], ["updated_at", "2015-09-30 11:11:27.383889"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Dance"], ["created_at", "2015-09-30 11:11:27.388822"], ["updated_at", "2015-09-30 11:11:27.388822"]]
+  [1m[35m (2.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Drama"], ["created_at", "2015-09-30 11:11:27.392848"], ["updated_at", "2015-09-30 11:11:27.392848"]]
+  [1m[36m (2.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Drawing and Painting"], ["created_at", "2015-09-30 11:11:27.396935"], ["updated_at", "2015-09-30 11:11:27.396935"]]
+  [1m[35m (2.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Drinking"], ["created_at", "2015-09-30 11:11:27.400905"], ["updated_at", "2015-09-30 11:11:27.400905"]]
+  [1m[36m (5.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Dogs"], ["created_at", "2015-09-30 11:11:27.408154"], ["updated_at", "2015-09-30 11:11:27.408154"]]
+  [1m[35m (2.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Eating"], ["created_at", "2015-09-30 11:11:27.412551"], ["updated_at", "2015-09-30 11:11:27.412551"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Fashion"], ["created_at", "2015-09-30 11:11:27.417088"], ["updated_at", "2015-09-30 11:11:27.417088"]]
+  [1m[35m (2.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Fishing"], ["created_at", "2015-09-30 11:11:27.421755"], ["updated_at", "2015-09-30 11:11:27.421755"]]
+  [1m[36m (2.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Food"], ["created_at", "2015-09-30 11:11:27.426174"], ["updated_at", "2015-09-30 11:11:27.426174"]]
+  [1m[35m (2.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Football"], ["created_at", "2015-09-30 11:11:27.430423"], ["updated_at", "2015-09-30 11:11:27.430423"]]
+  [1m[36m (3.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Gambling"], ["created_at", "2015-09-30 11:11:27.435609"], ["updated_at", "2015-09-30 11:11:27.435609"]]
+  [1m[35m (2.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Gaming"], ["created_at", "2015-09-30 11:11:27.439721"], ["updated_at", "2015-09-30 11:11:27.439721"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Gym"], ["created_at", "2015-09-30 11:11:27.443899"], ["updated_at", "2015-09-30 11:11:27.443899"]]
+  [1m[35m (2.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Hooping"], ["created_at", "2015-09-30 11:11:27.448331"], ["updated_at", "2015-09-30 11:11:27.448331"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Hunting"], ["created_at", "2015-09-30 11:11:27.452358"], ["updated_at", "2015-09-30 11:11:27.452358"]]
+  [1m[35m (2.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Internet"], ["created_at", "2015-09-30 11:11:27.456191"], ["updated_at", "2015-09-30 11:11:27.456191"]]
+  [1m[36m (3.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Jogging"], ["created_at", "2015-09-30 11:11:27.461133"], ["updated_at", "2015-09-30 11:11:27.461133"]]
+  [1m[35m (3.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Legos"], ["created_at", "2015-09-30 11:11:27.466180"], ["updated_at", "2015-09-30 11:11:27.466180"]]
+  [1m[36m (2.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Magic"], ["created_at", "2015-09-30 11:11:27.471645"], ["updated_at", "2015-09-30 11:11:27.471645"]]
+  [1m[35m (2.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Martial Arts"], ["created_at", "2015-09-30 11:11:27.475797"], ["updated_at", "2015-09-30 11:11:27.475797"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Movies"], ["created_at", "2015-09-30 11:11:27.480067"], ["updated_at", "2015-09-30 11:11:27.480067"]]
+  [1m[35m (2.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Music"], ["created_at", "2015-09-30 11:11:27.484318"], ["updated_at", "2015-09-30 11:11:27.484318"]]
+  [1m[36m (3.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Paintball"], ["created_at", "2015-09-30 11:11:27.488957"], ["updated_at", "2015-09-30 11:11:27.488957"]]
+  [1m[35m (2.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Photography"], ["created_at", "2015-09-30 11:11:27.494040"], ["updated_at", "2015-09-30 11:11:27.494040"]]
+  [1m[36m (2.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Pilates"], ["created_at", "2015-09-30 11:11:27.499131"], ["updated_at", "2015-09-30 11:11:27.499131"]]
+  [1m[35m (2.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Puzzles"], ["created_at", "2015-09-30 11:11:27.504452"], ["updated_at", "2015-09-30 11:11:27.504452"]]
+  [1m[36m (3.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Reading"], ["created_at", "2015-09-30 11:11:27.509117"], ["updated_at", "2015-09-30 11:11:27.509117"]]
+  [1m[35m (3.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Religion"], ["created_at", "2015-09-30 11:11:27.514051"], ["updated_at", "2015-09-30 11:11:27.514051"]]
+  [1m[36m (2.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Rock Climbing"], ["created_at", "2015-09-30 11:11:27.518874"], ["updated_at", "2015-09-30 11:11:27.518874"]]
+  [1m[35m (3.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sailing"], ["created_at", "2015-09-30 11:11:27.523397"], ["updated_at", "2015-09-30 11:11:27.523397"]]
+  [1m[36m (3.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sarcasm"], ["created_at", "2015-09-30 11:11:27.528136"], ["updated_at", "2015-09-30 11:11:27.528136"]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Shooting"], ["created_at", "2015-09-30 11:11:27.532692"], ["updated_at", "2015-09-30 11:11:27.532692"]]
+  [1m[36m (5.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Skateboarding"], ["created_at", "2015-09-30 11:11:27.540404"], ["updated_at", "2015-09-30 11:11:27.540404"]]
+  [1m[35m (2.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Skiing"], ["created_at", "2015-09-30 11:11:27.545044"], ["updated_at", "2015-09-30 11:11:27.545044"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Snowboarding"], ["created_at", "2015-09-30 11:11:27.549902"], ["updated_at", "2015-09-30 11:11:27.549902"]]
+  [1m[35m (2.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Soccer"], ["created_at", "2015-09-30 11:11:27.555776"], ["updated_at", "2015-09-30 11:11:27.555776"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sports (General)"], ["created_at", "2015-09-30 11:11:27.560128"], ["updated_at", "2015-09-30 11:11:27.560128"]]
+  [1m[35m (3.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Surfing"], ["created_at", "2015-09-30 11:11:27.564890"], ["updated_at", "2015-09-30 11:11:27.564890"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Swimming"], ["created_at", "2015-09-30 11:11:27.569829"], ["updated_at", "2015-09-30 11:11:27.569829"]]
+  [1m[35m (2.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Technology"], ["created_at", "2015-09-30 11:11:27.573795"], ["updated_at", "2015-09-30 11:11:27.573795"]]
+  [1m[36m (3.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Travel"], ["created_at", "2015-09-30 11:11:27.578634"], ["updated_at", "2015-09-30 11:11:27.578634"]]
+  [1m[35m (3.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Video Games"], ["created_at", "2015-09-30 11:11:27.583574"], ["updated_at", "2015-09-30 11:11:27.583574"]]
+  [1m[36m (2.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Writing"], ["created_at", "2015-09-30 11:11:27.588495"], ["updated_at", "2015-09-30 11:11:27.588495"]]
+  [1m[35m (2.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Work"], ["created_at", "2015-09-30 11:11:27.593169"], ["updated_at", "2015-09-30 11:11:27.593169"]]
+  [1m[36m (3.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "interests" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Yoga"], ["created_at", "2015-09-30 11:11:27.598255"], ["updated_at", "2015-09-30 11:11:27.598255"]]
+  [1m[35m (2.6ms)[0m  commit transaction
+
+
+Started GET "/users/edit" for ::1 at 2015-09-30 13:11:42 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mInterest Load (0.4ms)[0m  [1mSELECT "interests".* FROM "interests"[0m
+  [1m[35mInterest Load (0.3ms)[0m  SELECT "interests".* FROM "interests" INNER JOIN "interests_users" ON "interests"."id" = "interests_users"."interest_id" WHERE "interests_users"."user_id" = ?  [["user_id", 1]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (113.6ms)
+Completed 200 OK in 429ms (Views: 376.5ms | ActiveRecord: 2.3ms)
+
+
+Started PUT "/users" for ::1 at 2015-09-30 13:12:20 +0200
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PiEuKi46hUcNbpU3QfnANwYhoKMB6K+LVZgEW7IiTnvRrtt6Ux7rqbMVJfugMZWr0cN1DnVbR9T7pywcRSqwog==", "user"=>{"name"=>"Jennifer McFly", "location"=>"omaha", "state"=>"NE", "gender"=>"Female", "date_of_birth(1i)"=>"1968", "date_of_birth(2i)"=>"9", "date_of_birth(3i)"=>"30", "relationship"=>"married", "orientation"=>"straight", "education"=>"college", "kids"=>"true", "drinks"=>"true", "smokes"=>"false", "interests_ids"=>["1", "2"], "description"=>"Married to Marty since 1986.", "email"=>"j@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Update"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Unpermitted parameters: interests_ids, password_confirmation
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "gender" = ?, "orientation" = ?, "relationship" = ?, "kids" = ?, "smokes" = ?, "drinks" = ?, "location" = ?, "description" = ?, "education" = ?, "state" = ?, "date_of_birth" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["gender", 1], ["orientation", 4], ["relationship", 5], ["kids", "t"], ["smokes", "f"], ["drinks", "t"], ["location", "omaha"], ["description", "Married to Marty since 1986."], ["education", 7], ["state", "NE"], ["date_of_birth", "1968-09-30"], ["updated_at", "2015-09-30 11:12:20.685381"], ["id", 1]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 100ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/" for ::1 at 2015-09-30 13:12:20 +0200
+Processing by UsersController#home as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered users/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 53ms (Views: 51.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/profile" for ::1 at 2015-09-30 13:12:22 +0200
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mInterest Load (0.1ms)[0m  SELECT "interests".* FROM "interests" INNER JOIN "interests_users" ON "interests"."id" = "interests_users"."interest_id" WHERE "interests_users"."user_id" = ?  [["user_id", 1]]
+  Rendered users/profile.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 51ms (Views: 49.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/profile" for ::1 at 2015-09-30 13:12:48 +0200
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mInterest Load (0.1ms)[0m  SELECT "interests".* FROM "interests" INNER JOIN "interests_users" ON "interests"."id" = "interests_users"."interest_id" WHERE "interests_users"."user_id" = ?  [["user_id", 1]]
+  Rendered users/profile.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 64ms (Views: 62.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/profile" for ::1 at 2015-09-30 13:12:59 +0200
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mInterest Load (0.1ms)[0m  SELECT "interests".* FROM "interests" INNER JOIN "interests_users" ON "interests"."id" = "interests_users"."interest_id" WHERE "interests_users"."user_id" = ?  [["user_id", 1]]
+  Rendered users/profile.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 46ms (Views: 43.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/profile" for ::1 at 2015-09-30 13:13:11 +0200
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mInterest Load (0.3ms)[0m  SELECT "interests".* FROM "interests" INNER JOIN "interests_users" ON "interests"."id" = "interests_users"."interest_id" WHERE "interests_users"."user_id" = ?  [["user_id", 1]]
+  Rendered users/profile.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 66ms (Views: 63.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/profile" for ::1 at 2015-09-30 13:13:29 +0200
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mInterest Load (0.1ms)[0m  SELECT "interests".* FROM "interests" INNER JOIN "interests_users" ON "interests"."id" = "interests_users"."interest_id" WHERE "interests_users"."user_id" = ?  [["user_id", 1]]
+  Rendered users/profile.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 56ms (Views: 54.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for ::1 at 2015-09-30 13:13:43 +0200
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mInterest Load (0.4ms)[0m  SELECT "interests".* FROM "interests"
+  [1m[36mInterest Load (0.1ms)[0m  [1mSELECT "interests".* FROM "interests" INNER JOIN "interests_users" ON "interests"."id" = "interests_users"."interest_id" WHERE "interests_users"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (22.2ms)
+Completed 200 OK in 62ms (Views: 60.2ms | ActiveRecord: 0.6ms)
+
+
+Started PUT "/users" for ::1 at 2015-09-30 13:13:59 +0200
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xG2K5dgzk7ux1BT95pUzjCr3+Ny9bHnJ9rBHmz2iVgIr4n+1pRf9VQ+vpDEHXWYQ/RUtccnfkZZYj2/cyqqo2w==", "user"=>{"name"=>"Jennifer McFly", "location"=>"Hill Valley", "state"=>"CA", "gender"=>"Female", "date_of_birth(1i)"=>"1968", "date_of_birth(2i)"=>"9", "date_of_birth(3i)"=>"30", "relationship"=>"married", "orientation"=>"straight", "education"=>"college", "kids"=>"true", "drinks"=>"true", "smokes"=>"false", "description"=>"Married to Marty since 1986.", "email"=>"j@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Update"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Unpermitted parameter: password_confirmation
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "location" = ?, "state" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["location", "Hill Valley"], ["state", "CA"], ["updated_at", "2015-09-30 11:13:59.830164"], ["id", 1]]
+  [1m[35m (2.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 79ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/" for ::1 at 2015-09-30 13:13:59 +0200
+Processing by UsersController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered users/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 33ms (Views: 32.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/profile" for ::1 at 2015-09-30 13:14:01 +0200
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mInterest Load (0.1ms)[0m  [1mSELECT "interests".* FROM "interests" INNER JOIN "interests_users" ON "interests"."id" = "interests_users"."interest_id" WHERE "interests_users"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/profile.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 42ms (Views: 40.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/profile" for ::1 at 2015-09-30 13:14:12 +0200
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mInterest Load (0.1ms)[0m  [1mSELECT "interests".* FROM "interests" INNER JOIN "interests_users" ON "interests"."id" = "interests_users"."interest_id" WHERE "interests_users"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/profile.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 40ms (Views: 39.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for ::1 at 2015-09-30 13:16:37 +0200
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mInterest Load (0.7ms)[0m  [1mSELECT "interests".* FROM "interests"[0m
+  [1m[35mInterest Load (0.1ms)[0m  SELECT "interests".* FROM "interests" INNER JOIN "interests_users" ON "interests"."id" = "interests_users"."interest_id" WHERE "interests_users"."user_id" = ?  [["user_id", 1]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 56ms (Views: 53.7ms | ActiveRecord: 0.9ms)
+
+
+Started PUT "/users" for ::1 at 2015-09-30 13:16:46 +0200
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bD+ACEeWq8qQWTis+aWj8y0Ik5qunUY/nbLR3yLbhRKDsHVYOrLFJC4iiGAYbfZv+upGN9ourmAzjfmY1dN7yw==", "user"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x007f844f88b0a0 @tempfile=#<Tempfile:/var/folders/pz/s7j6k41s50x5zpvq1txzb3xh0000gn/T/RackMultipart20150930-9015-16jtlh8.jpg>, @original_filename="Polaroid_600_sunflower.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"Polaroid_600_sunflower.jpg\"\r\nContent-Type: image/jpeg\r\n">, "name"=>"Jennifer McFly", "location"=>"Hill Valley", "state"=>"CA", "gender"=>"Female", "date_of_birth(1i)"=>"1968", "date_of_birth(2i)"=>"9", "date_of_birth(3i)"=>"30", "relationship"=>"married", "orientation"=>"straight", "education"=>"college", "kids"=>"true", "drinks"=>"true", "smokes"=>"false", "description"=>"Married to Marty since 1986.", "email"=>"j@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Update"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Unpermitted parameter: password_confirmation
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Command :: file -b --mime '/var/folders/pz/s7j6k41s50x5zpvq1txzb3xh0000gn/T/7bf5a44c3ca6dd342eb94ae00d278c4120150930-9015-1254461.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/pz/s7j6k41s50x5zpvq1txzb3xh0000gn/T/7bf5a44c3ca6dd342eb94ae00d278c4120150930-9015-1jlnkvw.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/pz/s7j6k41s50x5zpvq1txzb3xh0000gn/T/7bf5a44c3ca6dd342eb94ae00d278c4120150930-9015-1jlnkvw.jpg[0]'
+Command :: convert '/var/folders/pz/s7j6k41s50x5zpvq1txzb3xh0000gn/T/7bf5a44c3ca6dd342eb94ae00d278c4120150930-9015-1jlnkvw.jpg[0]' -auto-orient -resize "300x300>" '/var/folders/pz/s7j6k41s50x5zpvq1txzb3xh0000gn/T/ac2a8db17cc5e087d754d9f1731d8de320150930-9015-1me4gcm'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/pz/s7j6k41s50x5zpvq1txzb3xh0000gn/T/7bf5a44c3ca6dd342eb94ae00d278c4120150930-9015-1jlnkvw.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/pz/s7j6k41s50x5zpvq1txzb3xh0000gn/T/7bf5a44c3ca6dd342eb94ae00d278c4120150930-9015-1jlnkvw.jpg[0]'
+Command :: convert '/var/folders/pz/s7j6k41s50x5zpvq1txzb3xh0000gn/T/7bf5a44c3ca6dd342eb94ae00d278c4120150930-9015-1jlnkvw.jpg[0]' -auto-orient -resize "150x" -crop "150x150+0+17" +repage '/var/folders/pz/s7j6k41s50x5zpvq1txzb3xh0000gn/T/ac2a8db17cc5e087d754d9f1731d8de320150930-9015-oslwt7'
+Command :: file -b --mime '/var/folders/pz/s7j6k41s50x5zpvq1txzb3xh0000gn/T/7bf5a44c3ca6dd342eb94ae00d278c4120150930-9015-1ksmb5o.jpg'
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "avatar_file_name" = ?, "avatar_content_type" = ?, "avatar_file_size" = ?, "avatar_updated_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["avatar_file_name", "Polaroid_600_sunflower.jpg"], ["avatar_content_type", "image/jpeg"], ["avatar_file_size", 210313], ["avatar_updated_at", "2015-09-30 11:16:47.066622"], ["updated_at", "2015-09-30 11:16:47.711393"], ["id", 1]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 744ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/" for ::1 at 2015-09-30 13:16:47 +0200
+Processing by UsersController#home as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered users/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 49ms (Views: 47.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/profile" for ::1 at 2015-09-30 13:16:49 +0200
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mInterest Load (0.1ms)[0m  SELECT "interests".* FROM "interests" INNER JOIN "interests_users" ON "interests"."id" = "interests_users"."interest_id" WHERE "interests_users"."user_id" = ?  [["user_id", 1]]
+  Rendered users/profile.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 38ms (Views: 37.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/home" for ::1 at 2015-09-30 13:18:27 +0200
+Processing by UsersController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered users/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 48ms (Views: 46.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/home" for ::1 at 2015-09-30 13:18:27 +0200
+Processing by UsersController#home as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered users/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 39ms (Views: 37.9ms | ActiveRecord: 0.1ms)
