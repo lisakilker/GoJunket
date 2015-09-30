@@ -37,6 +37,8 @@
 </div>
 <br>
 
+
+
 <div class="form-group">
   <%= f.label :relationship, "What's your situation?", class: 'col-sm-2 control-label'  %>
 <div class="col-sm-6">
@@ -94,6 +96,15 @@
 </div>
 </div>
 <br>
+
+ <div>Interests<br>
+ <% Interest.all.each do |int| %>
+
+ <%= check_box_tag "user_interests_ids_#{int.id}", int.id, (f.object.interests.present? && f.object.interests.include?(int.id)), {:name => "user[interests_ids][]"} %>
+ <%= label_tag "user_interests_ids_#{int.id}", int.name %>
+ <% end %>
+ </div>
+ <br>
 
 <div class="field">
   <%= f.label :description %><em>(You have 500 characters, go!)</em><br />

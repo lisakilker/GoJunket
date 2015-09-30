@@ -8,23 +8,21 @@
 
 <p><%= current_user.age %> years old</p>
 
-<p><%= current_user.languages %></p>
 
-<p><%= current_user.relationship %></p>
 
-<p><%= current_user.orientation %></p>
+<p><%= current_user.relationship.capitalize %></p>
 
-<p><%= current_user.education %></p>
+<p><%= current_user.orientation.capitalize %></p>
+
+<p><%= current_user.education.capitalize %></p>
 
 <p>Has kids<br><%= current_user.kids ? "Yes" : "No" %></p>
 
 <p>Drinks<br><%= current_user.drinks ? "Yes" : "No" %></p>
 
 <p>Smokes<br><%= current_user.smokes ? "Yes" : "No" %></p>
-<!-- <p>Websites</p>
-<p>Interests</p> -->
 
-<p>Interests<br><%= current_user.interests %></p>
+<p>Interests<br><%= current_user.interests.map {|int| int.name}  %></p>
 
 <p>The 411 on me:<br><%= current_user.description %></p>
 
