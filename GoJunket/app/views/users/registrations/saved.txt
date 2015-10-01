@@ -1,50 +1,35 @@
-<div class="form-group">
-  <%= f.label :language, "What languages do you speak?", class: 'col-sm-2 control-label'  %>
-<div class="col-sm-6">
-  <% User.languages.keys.each do |key| %>
-    <%= f.check_box :language %> <%= f.label key %>
-  <% end %>
-</div>
-</div>
-<br>
+class SearchController < ApplicationController
+  def results
+    @search = Search.find(params)
+    @users = @search.users
+  end
+end
 
-<div class="form-group">
-  <%= f.label :interests, "What do you geek out on?", class: 'col-sm-2 control-label'  %>
-<div class="col-sm-6">
-  <% User.interests.keys.each do |key| %>
-    <%= f.check_box :interests %> <%= f.label key %>
-  <% end %>
-</div>
-</div>
-<br>
-
-<div class="field">
-     <%= f.check_box :languages, {}, true %> <%= f.label :languages, "English" %> 
-     <%= f.check_box :languages, {}, true %> <%= f.label :languages, "Spanish" %> 
- <%= f.check_box :languages, {}, true %> <%= f.label :languages, "Chinese" %> </div>
-
- <p>Interests</p>
- <ul>
- <% Interest.all.each do |int| %>
- <%= hidden_field_tag "user_interests_ids_none", nil, {:name => "user[interests_ids][]"}%>
- <li>
- <%= check_box_tag "user_interests_ids_#{int.id}", int.id, (f.object.interests.present? && f.object.interests.include?(int.id)), {:name => "user[interests_ids][]"} %>
- <%= label_tag "user_interests_ids_#{int.id}", int.name %>
- </li>
- <% end %>
- </ul>
-
- # enum language: [:Chinese, :English, :French, :German, :Italian, :Russian, :Spanish]
-
-  
-<p><%= form_tag(posts_path, :method => "get", id: "search-form") do %>
-<%= text_field_tag :search, params[:search], placeholder: "Search Users" %>
-<%= submit_tag "Search" %>
+<% @users.each do |user| %>
+  <%= link_to user.name, user_path(user) %>
 <% end %>
-  <%= render @users %>
-<% else %>
-  <p>No GoJunkies match your critera.  Perhaps be less picky! <%= params[:search] %>.</p>
-<% end %>
-</p>
-  
-  enum interests: [:Animals, :Astrology, :Astronomy, :Baseball, :Basketball, :Board_Games, :Board_Sports, :Boxing, :Casual_Sex, :Cats, :Computer_Programming, :Cooking, :Cosplay, :Cycling, :Dance, :Drama, :Drawing_and_Painting, :Drinking, :Dogs, :Eating, :Fashion, :Fishing, :Food, :Football, :Gambling, :Gaming, :Hooping, :Hunting, :Internet, :Jogging, :Legos, :Magic, :Martial_Arts, :Movies, :Music, :Napping, :Paintball, :Photography, :Pilates, :Puzzles, :Reading, :Religion, :Rock_Climbing, :Sailing, :Sarcasm, :Shooting, :Skateboarding, :Skiing, :Snowboarding, :Soccer, :Sports_General, :Surfing, :Swimming, :Technology, :Travel, :Video_Games, :Writing, :Work, :Yoga]
+
+
+  def self.find(params)
+    users = User.order("RANDOM()")
+    users = users.where(location: params[:location]) if params[:location].present?
+    users = users.where(state: params[:state]) if params[:state].present?
+    users = users.where(gender: params[:gender]) if params[:gender].present?
+    users = users.where(orientation: params[:orientation]) if params[:orientation].present?
+    users = users.where(education: params[:education]) if params[:education].present?
+    users = users.where(relationship: params[:relationship]) if params[:relationship].present?
+    users = users.where(kids: params[:kids]) if params[:kids].present?
+    users = users.where(drinks: params[:drinks]) if params[:drinks].present?
+    users = users.where(smokes: params[:smokes]) if params[:smokes].present?
+    users = users.where(interests: params[:interests]) if params[:interests].present?
+
+    if params[:min_age].present? && params[:max_age].present?
+      min = [ min_age, max_age ].min
+      max = [ min_age, max_age ].max
+      min_date = Date.today - min.years
+      max_date = Date.today - max.years
+      users = users.where("birthday BETWEEN ? AND ?", max_date, min_date)
+    end
+    users
+  end
+end

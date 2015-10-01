@@ -19,8 +19,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # PUT /resource
   def update
-    interest_id = params[:user][:interests_ids]
-    current_user.interests.push(Interest.find(interest_id))
+    interests_ids = params[:user][:interests_ids] || []
+    current_user.interests = interests_ids.map {|id| Interest.find(id)}
     super
   end
 

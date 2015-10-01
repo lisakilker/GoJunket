@@ -10,19 +10,19 @@ class User < ActiveRecord::Base
 	validates :date_of_birth, presence: true
 	validates :gender, presence: true
 	
-	enum gender: [:Male, :Female, :male, :female]
+	enum gender: [:Guy, :Girl, :guy, :girl]
 	
-	enum orientation: [:Straight, :Gay, :Bi, :Whatever, :straight, :gay, :bi, :whatever]
+	enum orientation: [:Straight, :Gay, :Bi, :Whatever, :straight, :gay, :bi]
 	
 	enum relationship: [:Single, :Taken, :Married, :single, :taken, :married]
 	
 	enum education: [:High_School, :Course_Certification, :College, :Grad_School, :PhD, :high_school, :course_certification, :college, :grad_school, :phd]
 
-	 has_and_belongs_to_many :interests
- accepts_nested_attributes_for :interests, :allow_destroy => true, :reject_if => :all_blank
+	has_and_belongs_to_many :interests
+	accepts_nested_attributes_for :interests, :allow_destroy => true, :reject_if => :all_blank
  
- has_and_belongs_to_many :languages
- accepts_nested_attributes_for :languages, :allow_destroy => true, :reject_if => :all_blank
+	has_and_belongs_to_many :languages
+ 	accepts_nested_attributes_for :languages, :allow_destroy => true, :reject_if => :all_blank
 
 	def age
 		age = Date.today.year - date_of_birth.year
@@ -38,4 +38,6 @@ class User < ActiveRecord::Base
 	  where("name LIKE ?", "%#{search}%")
 	end
 end
+
+
 
