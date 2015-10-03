@@ -22,7 +22,10 @@
 
 <p>Smokes?  <%= @user.smokes ? "Yup" : "Nope" %></p>
 
-<p>Interests:<br><%= @user.interests.map {|int| int.name}  %></p>
+<p>Interests:<% @user.interests.each do |int| %><br>
+<%= int.name %>
+<% end %>
+</p>
 
 <p>The 411 on me:<br><%= @user.description %></p>
 

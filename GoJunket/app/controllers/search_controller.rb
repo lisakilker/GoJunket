@@ -1,19 +1,19 @@
 class SearchController < ApplicationController
-	  def new
+
+	def new
     @search = Search.new
   end
 
-  def create
-    @search = Search.new(params[:search])
-    if @search.save
-      redirect_to @search
-    else
-      render 'new'
+  def results
+    if params
+      search = Search.create
+      @users = search.find_users(params)
     end
   end
 
   def show
-    @search = Search.find(params)
-    @users = Users.search(params)
-  end
-end
+	  @search = Search.find(params)
+	  @users = @search.users
+	end
+end 
+

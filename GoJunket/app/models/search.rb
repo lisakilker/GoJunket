@@ -1,36 +1,35 @@
 class Search < ActiveRecord::Base
 
-	attr_accessible :location, :state, :gender, :orientation, :education, :relationship, :kids, :drinks, :smokes, :interests
-
-	def users
-    	@users ||= find_users
+	def users(params)
+    	@users ||= find_users(params)
   	end
 
-  	def self.search(params)
-  	end
+	def find_users(params)
 
-	private
-
-	def find_users
-	  users = User.order("RANDOM()")
-	  users = users.where(location: params[:location]) if params[:location].present?
-	  users = users.where(state: params[:state]) if params[:state].present?
-	  users = users.where(gender: params[:gender]) if params[:gender].present?
-	  users = users.where(orientation: params[:orientation]) if params[:orientation].present?
-	  users = users.where(education: params[:education]) if params[:education].present?
-	  users = users.where(relationship: params[:relationship]) if params[:relationship].present?
-	  users = users.where(kids: params[:kids]) if params[:kids].present?
-	  users = users.where(drinks: params[:drinks]) if params[:drinks].present?
-	  users = users.where(smokes: params[:smokes]) if params[:smokes].present?
-	  users = users.where(interests: params[:interests]) if params[:interests].present?
-
-	  if params[:min_age].present? && params[:max_age].present?
-	    min = [ min_age, max_age ].min
-	    max = [ min_age, max_age ].max
-	    min_date = Date.today - min.years
-	    max_date = Date.today - max.years
-	    users = users.where("birthday BETWEEN ? AND ?", max_date, min_date)
-	  end
-	  users
+		# users = User.order("RANDOM()")
+		
+		interests = params[:interest] 
+		interests_where_string = "(#{interests.join(', ')})"
+		users = User.joins(:interests).where("interests.name IN (?)", interests)
+		users = users.uniq
+		users = users.where("location LIKE ?", "%#{params[:location]}%") if params[:location].present?
+		users = users.where("state LIKE ?", "%#{params[:state]}%") if params[:state].present?
+		users = users.where(gender: params[:gender]) if params[:gender].present?
+		users = users.where(orientation: params[:orientation]) if params[:orientation].present?
+		users = users.where(education: params[:education]) if params[:education].present?
+		users = users.where(relationship: params[:relationship]) if params[:relationship].present?
+		users = users.where(kids: params[:kids]) if params[:kids].present?
+		users = users.where(drinks: params[:drinks]) if params[:drinks].present?
+		users = users.where(smokes: params[:smokes]) if params[:smokes].present?
+		
+		
+		if params[:min_age].present? && params[:max_age].present?
+		    min = [ params[:min_age], params[:max_age] ].min.to_i
+		    max = [ params[:min_age], params[:max_age] ].max.to_i
+		    min_date = Date.today - min.years
+		    max_date = Date.today - max.years
+		    users = users.where("date_of_birth BETWEEN ? AND ?", max_date, min_date)
+	  	end
+	  	users
 	end
 end

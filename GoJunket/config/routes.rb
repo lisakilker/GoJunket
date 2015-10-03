@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
   
   root to: 'users#home'
-  get 'home', to: 'users#home'
   devise_for :users, controllers: { registrations: "users/registrations" }
   resources :users, only: [:show, :index]
-  get 'profile', to: 'users#profile'
-  get 'results', to: 'users#results'
+  get '/profile', to: 'users#profile'
+  get '/results', to: 'search#results'
   
 end
 

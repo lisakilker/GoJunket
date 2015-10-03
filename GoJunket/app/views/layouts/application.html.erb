@@ -12,7 +12,7 @@
       <div id="top_bar">
         <% if user_signed_in? %>
       <p>
-      <%= link_to 'Home', home_path %>
+      <%= link_to 'Home', root_path %>
       <%= link_to 'My profile', profile_path %>
       <%= link_to 'Sign out', destroy_user_session_path, method: 'DELETE' %></p>
         <% else %>

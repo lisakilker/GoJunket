@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
 	
 	enum gender: [:Guy, :Girl, :guy, :girl]
 	
-	enum orientation: [:Straight, :Gay, :Bi, :Whatever, :straight, :gay, :bi]
+	enum orientation: [:Straight, :Gay, :Bi, :straight, :gay, :bi]
 	
 	enum relationship: [:Single, :Taken, :Married, :single, :taken, :married]
 	
