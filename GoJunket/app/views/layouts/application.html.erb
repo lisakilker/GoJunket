@@ -6,23 +6,33 @@
       <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
       <%= csrf_meta_tags %>
   </head>
-    <body>
+  <body>
+    <div class="header">
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
-      <div id="top_bar">
+      <div id="top_bar"><div class="container-fluid"></div>
+      <div class="col-md-3" align="right">
         <% if user_signed_in? %>
-      <p>
-      <%= link_to 'Home', root_path %>
-      <%= link_to 'My profile', profile_path %>
-      <%= link_to 'Sign out', destroy_user_session_path, method: 'DELETE' %></p>
+        
+        <%= link_to 'Home', root_path %>
+        <%= link_to 'My profile', profile_path %>
+        <%= link_to 'Sign out', destroy_user_session_path, method: 'DELETE' %>
         <% else %>
-      <p>
-        <%= link_to 'Sign_up', new_user_registration_path %> | 
+        
+        <%= link_to 'Sign_up', new_user_registration_path %> |
         <%= link_to 'Sign_in', new_user_session_path %>
-      </p>
         <% end %>
       </div>
+      <div class="col-md-3" align="right">
+        <%= form_tag(users_path, :method => "get", id: "search-form") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Name" %>
+        <%= submit_tag "Find GoJunkie", :name => nil %>
+        <% end %>
+      </div>
+      <div id="top_bar"><div class="container-fluid"></div>
+      <div class="col-md-4" align="left">
+      <h1>GoJunket</h1><h2>Meet. Go out. Now.</h2></div></div></div>
         <%= yield %>
-
     </body>
-</html>
+    <footer><br><br><center>Copyright GoJunket 2015</center></footer>
+  </html>

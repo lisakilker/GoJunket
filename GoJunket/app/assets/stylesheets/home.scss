@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 html { 
-  background: url(vintagenycnights.jpg) no-repeat center center fixed; 
+  background: url(vintagebeaches.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -12,10 +12,11 @@ html {
 body {
 	font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 	font-style: normal;
+	font-size: 16px;
 	font-variant: small-caps;
 	font-weight: 400;
 	line-height: 18px;
-	color: white;
+	color: #FF3399;
 }
 
 input[type='checkbox'] {
@@ -37,19 +38,20 @@ input {
 	background-color: white;
     border: 0px solid;
     color: black;
-	font-size: 12px;
+	font-size: 14px;
 }
 
 button {
 	font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 	color: black;
-	font-size: 12px;
+	font-size: 14px;
 	background-color: white;
 	border: 0px solid;
 }
 
 a {
-    color: #EDD0A1;
+    color: black;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 
 [type="radio"] {
@@ -58,7 +60,7 @@ a {
   width: 1em;
   height: 1em;
   border-radius: 1em;
-  border: 0.125em solid #fff;
+  border: 0.125em solid #000000;
 }
 
 label {
@@ -71,7 +73,7 @@ label {
 
 [type="checkbox"] {
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: center;
     padding-left: 2px;
     margin-right: 2px;
     width: 30px;
@@ -84,7 +86,39 @@ ul {
     -webkit-column-count: 4;
     -webkit-column-gap: 20px;
     column-count: 4;
-    column-gap: 20px;
+    column-gap: 15px;
+    text-align: justify;
+}
+
+.header {
+	background: transparent;
+	width: 100%;
+	height: 150px;
+	padding-left: 10px;
+	padding-top: 1px;
+	padding-right: 10px;
+	color: #FF3399;
+}
+
+.header .col-md-3 {
+	padding-top: 1px;
+	padding-left: 1px;
+	padding-right: 10px;
+}
+
+.header .col-md-4 {
+	padding-top: 1px;
+	padding-left: 1px;
+}
+
+footer {
+	background: transparent;
+	width: 100%;
+	height: 110px;
+	padding-left: 1px;
+	padding-top: 1px;
+	padding-right: 1px;
+	
 }
 
 

@@ -1,153 +1,152 @@
+<br><br><br><center>
 <body>
-<h2>Make your profile more snazzy, <%= current_user.name.upcase %>!</h2>
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'form-horizontal'}) do |f| %>
-  <%= devise_error_messages! %>
+  <h2>Make your profile more snazzy, <%= current_user.name.upcase %>!</h2>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'form-horizontal'}) do |f| %>
+        <%= devise_error_messages! %>
+    <div class="form-group">
+        <%= f.label :avatar, "Profile pic", class: 'col-sm-2 control-label'  %>
+    <div class="col-sm-6">
+        <%= f.file_field :avatar %>
+    </div>
+    </div>
+    <br>
 
-<div class="form-group">
-  <%= f.label :avatar, "Profile pic", class: 'col-sm-2 control-label'  %>
-<div class="col-sm-6">
-  <%= f.file_field :avatar %>
-</div>
-</div>
-<br>
-<div class="field">
-  <%= f.label :name %><br />
-  <%= f.text_field :name, autofocus: true %>
-</div>
-<br>
+    <div class="field">
+        <%= f.label :name %><br />
+        <%= f.text_field :name, autofocus: true %>
+    </div>
+    <br>
 
-<div class="field">
-  <%= f.label :location, "City" %><br />
-  <%= f.text_field :location, autofocus: true %>
-</div>
-<br>
-<div class="field">
-  <%= f.label :state, "State (Two letter abbreviation)" %><br />
-  <%= f.text_field :state, autofocus: true, :maxlength=>2 %>
-</div>
-<br>
+    <div class="field">
+        <%= f.label :location, "City" %><br />
+        <%= f.text_field :location, autofocus: true %>
+    </div>
+    <br>
 
-<div class="form-group">
-  <%= f.label :is_female, "Gender (Select the gender you identify as)", class: 'col-sm-2 control-label'  %> 
-<div class="col-sm-6">
-  <%= f.radio_button :gender, :Girl %> <%= f.label :gender, "Girl" %>
-  <%= f.radio_button :gender, :Guy %> <%= f.label :gender, "Guy" %>
-</div>
-</div>
+    <div class="field">
+        <%= f.label :state, "State (Two letters)" %><br />
+        <%= f.text_field :state, autofocus: true, :maxlength=>2 %>
+    </div>
+    <br>
 
-<br>
+    <div class="form-group">
+        <%= f.label :is_female, "Gender (Select the gender you identify as)", class: 'col-sm-2 control-label'  %>
+    <div class="col-sm-6">
+        <%= f.radio_button :gender, :Girl %> <%= f.label :gender, "Girl" %>
+        <%= f.radio_button :gender, :Guy %> <%= f.label :gender, "Guy" %>
+    </div>
+    </div>
+    <br>
 
-<div class="form-group">
-  <%= f.label :date_of_birth, class: 'col-sm-2 control-label'  %>
-<div class="col-sm-6">
-  <%= f.date_select :date_of_birth, start_year: 1920, end_year: 1997, class: 'form-control'  %>
-</div>
-</div>
-<br>
+    <div class="form-group">
+        <%= f.label :date_of_birth, class: 'col-sm-2 control-label'  %>
+    <div class="col-sm-6">
+        <%= f.date_select :date_of_birth, start_year: 1920, end_year: 1997, class: 'form-control'  %>
+    </div>
+    </div>
+    <br>
 
-<div class="form-group">
-  <%= f.label :relationship, "What's your situation?", class: 'col-sm-2 control-label'  %>
-<div class="col-sm-6">
-  <%= f.radio_button :relationship, :single %> <%= f.label :relationship, "Single" %>
-  <%= f.radio_button :relationship, :taken %> <%= f.label :relationship, "Taken" %>
-  <%= f.radio_button :relationship, :married %> <%= f.label :relationship, "Married" %>
-</div>
-</div>
-<br>
+    <div class="form-group">
+        <%= f.label :relationship, "What's your situation?", class: 'col-sm-2 control-label'  %>
+    <div class="col-sm-6">
+        <%= f.radio_button :relationship, :single %> <%= f.label :relationship, "Single" %>
+        <%= f.radio_button :relationship, :taken %> <%= f.label :relationship, "Taken" %>
+        <%= f.radio_button :relationship, :married %> <%= f.label :relationship, "Married" %>
+    </div>
+    </div>
+    <br>
 
-<div class="form-group">
-  <%= f.label :orientation, "What's your situation in the bedroom?", class: 'col-sm-2 control-label'  %>
-<div class="col-sm-6">
-  <%= f.radio_button :orientation, :straight %> <%= f.label :orientation, "Straight" %>
-  <%= f.radio_button :orientation, :gay %> <%= f.label :orientation, "Gay" %>
-  <%= f.radio_button :orientation, :bi %> <%= f.label :orientation, "Bi" %>
-</div>
-</div>
-<br>
+    <div class="form-group">
+        <%= f.label :orientation, "What's your situation in the bedroom?", class: 'col-sm-2 control-label'  %>
+    <div class="col-sm-6">
+        <%= f.radio_button :orientation, :straight %> <%= f.label :orientation, "Straight" %>
+        <%= f.radio_button :orientation, :gay %> <%= f.label :orientation, "Gay" %>
+        <%= f.radio_button :orientation, :bi %> <%= f.label :orientation, "Bi" %>
+    </div>
+    </div>
+    <br>
 
-<div class="form-group">
-  <%= f.label :education, "What's your highest level of completed education?", class: 'col-sm-2 control-label'  %>
-<div class="col-sm-6">
-  <%= f.radio_button :education, :high_school %> <%= f.label :education, "High School" %>
-  <%= f.radio_button :education, :course_certification %> <%= f.label :education, "Course Certification" %>
-  <%= f.radio_button :education, :college %> <%= f.label :education, "College" %>
-  <%= f.radio_button :education, :grad_school %> <%= f.label :education, "Grad School" %>
-  <%= f.radio_button :education, :phd %> <%= f.label :education, "PhD" %>
-</div>
-</div>
-<br>
+    <div class="form-group">
+        <%= f.label :education, "What's your highest level of completed education?", class: 'col-sm-2 control-label'  %>
+    <div class="col-sm-6">
+        <%= f.radio_button :education, :high_school %> <%= f.label :education, "High School" %>
+        <%= f.radio_button :education, :course_certification %> <%= f.label :education, "Course Certification" %>
+        <%= f.radio_button :education, :college %> <%= f.label :education, "College" %>
+        <%= f.radio_button :education, :grad_school %> <%= f.label :education, "Grad School" %>
+        <%= f.radio_button :education, :phd %> <%= f.label :education, "PhD" %>
+    </div>
+    </div>
+    <br>
 
-<div class="form-group">
-  <%= f.label :kids, "Have kiddos?", class: 'col-sm-2 control-label'  %>
-<div class="col-sm-6">
-  <%= f.radio_button :kids, true %> <%= f.label :kids, "Yup" %>
-  <%= f.radio_button :kids, false %> <%= f.label :kids, "Nope" %>
-</div>
-</div>
-<br>
-<div class="form-group">
-  <%= f.label :drinks, "Do you drink?", class: 'col-sm-2 control-label'  %>
-<div class="col-sm-6">
-  <%= f.radio_button :drinks, true %> <%= f.label :drinks, "Yup" %>
-  <%= f.radio_button :drinks, false %> <%= f.label :drinks, "Nope" %>
-</div>
-</div>
-<br>
-<div class="form-group">
-  <%= f.label :smokes, "Do you smoke?", class: 'col-sm-2 control-label'  %>
-<div class="col-sm-6">
-  <%= f.radio_button :smokes, true %> <%= f.label :smokes, "Yup" %>
-  <%= f.radio_button :smokes, false %> <%= f.label :smokes, "Nope" %>
-</div>
-</div>
-<br>
+    <div class="form-group">
+       <%= f.label :kids, "Have kiddos?", class: 'col-sm-2 control-label'  %>
+    <div class="col-sm-6">
+        <%= f.radio_button :kids, true %> <%= f.label :kids, "Yup" %>
+        <%= f.radio_button :kids, false %> <%= f.label :kids, "Nope" %>
+    </div>
+    </div>
+    <br>
 
- <div>What are you interested in?<br>
- <ul class="checkbox-grid"> <% Interest.all.each do |int| %>
- <li><%= check_box_tag "user_interests_ids_#{int.id}", int.id, (f.object.interests.present? && f.object.interests.include?(int.id)), {:name => "user[interests_ids][]"} %>
- <%= label_tag "user_interests_ids_#{int.id}", int.name %> <% end %></li>
-</ul>
- </div>
- <br>
-<div class="field">
-  <%= f.label :description, "The 411 on me (You have 500 characters, go!)" %><br />
-  <%= f.text_area :description, autofocus: true, :maxlength=>500 %>
-</div>
-<br>
+    <div class="form-group">
+        <%= f.label :drinks, "Do you drink?", class: 'col-sm-2 control-label'  %>
+    <div class="col-sm-6">
+        <%= f.radio_button :drinks, true %> <%= f.label :drinks, "Yup" %>
+        <%= f.radio_button :drinks, false %> <%= f.label :drinks, "Nope" %>
+    </div>
+    </div>
+    <br>
 
-<div class="field">
-  <%= f.label :email, "Update email" %><br />
-  <%= f.email_field :email, autofocus: true %>
-</div>
+    <div class="form-group">
+        <%= f.label :smokes, "Do you smoke?", class: 'col-sm-2 control-label'  %>
+    <div class="col-sm-6">
+        <%= f.radio_button :smokes, true %> <%= f.label :smokes, "Yup" %>
+        <%= f.radio_button :smokes, false %> <%= f.label :smokes, "Nope" %>
+    </div>
+    </div>
+    <br>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>What are you interested in?<br>
+    <ul class="checkbox-grid"> <% Interest.all.each do |int| %>
+      <li><%= check_box_tag "user_interests_ids_#{int.id}", int.id, (f.object.interests.present? && f.object.interests.include?(int.id)), {:name => "user[interests_ids][]"} %>
+        <%= label_tag "user_interests_ids_#{int.id}", int.name %> <% end %></li>
+    </ul>
+    </div>
+    <br>
 
-<div>We're still waiting for your confirmation: <%= resource.unconfirmed_email %></div>
+    <div class="field">
+        <%= f.label :description, "The 411 on me (You have 500 characters, go!)" %><br />
+        <%= f.text_area :description, autofocus: true, :maxlength=>500 %>
+    </div>
+    <br>
+    
+    <div class="field">
+        <%= f.label :email, "Update email" %><br />
+        <%= f.email_field :email, autofocus: true %>
+    </div>
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>We're still waiting for your confirmation: <%= resource.unconfirmed_email %></div>
+        <% end %>
+    <br>
 
-  <% end %>
-<br>
-<div class="field">
-  <%= f.label :password, "Update password (Go ahead and leave this blank if you don't need to change your password)" %> <i></i><br />
-  <%= f.password_field :password, autocomplete: "off" %>
-</div>
+    <div class="field">
+        <%= f.label :password, "Update password (Go ahead and leave this blank if you don't need to change your password)" %> <i></i><br />
+        <%= f.password_field :password, autocomplete: "off" %>
+    </div>
+    <div class="field">
+        <%= f.label :password_confirmation, "Confirm new password" %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    </div>
+    <br>
 
-<div class="field">
-  <%= f.label :password_confirmation, "Confirm new password" %><br />
-  <%= f.password_field :password_confirmation, autocomplete: "off" %>
-</div>
-<br>
-<div class="field">
-  <%= f.label :current_password, "Enter current password to confirm all these changes"%> <i></i><br />
-  <%= f.password_field :current_password, autocomplete: "off" %>
-</div>
-<br>
-<div class="actions">
-  <%= f.submit "Update", :class => 'button'%>
-</div>
-
-<% end %>
-
-
-<p><%= button_to "Deactivate my account", registration_path(resource_name), data: { confirm: "Are you absolutey, positively sure you want to close your account?" }, method: :delete %></p>
+  <div class="field">
+        <%= f.label :current_password, "Enter current password to confirm all these changes"%> <i></i><br />
+        <%= f.password_field :current_password, autocomplete: "off" %>
+  </div>
+  <br>
+  <div class="actions">
+      <%= f.submit "Update", :class => 'button'%>
+  </div>
+    <% end %>
+  <p><%= button_to "Deactivate my account", registration_path(resource_name), data: { confirm: "Are you absolutey, positively sure you want to close your account?" }, method: :delete %></p>
 </body>
- 
+</center>

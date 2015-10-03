@@ -1,3 +1,4 @@
+<br><br><br><center>
 <body>
 <h2>Howdy, <%= current_user.name.upcase %>!</h2>
 
@@ -24,11 +25,12 @@
 <p>Smokes?  <%= current_user.smokes ? "Yup" : "Nope" %></p>
 
 <p>Interests:<% current_user.interests.each do |int| %><br>
-<%= int.name %>
-<% end %>
+	<%= int.name %>
+	<% end %>
 </p>
 
 <p>The 411 on me:<br><%= current_user.description %></p>
 
-<%= link_to("Edit my profile", edit_user_registration_path)%>
+	<%= link_to("Edit my profile", edit_user_registration_path)%>
 </body>
+</center>

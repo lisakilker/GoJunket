@@ -1,34 +1,36 @@
+<br><br><br><center>
 <body>
-<h2>Wanna GoJunket with <%= @user.name %>?</h2>
+	<h2>Wanna GoJunket with <%= @user.name %>?</h2>
 
-<p><%= image_tag @user.avatar.url(:medium) %></p>
+	<p><%= image_tag @user.avatar.url(:medium) %></p>
 
-<p>Email:  <%= @user.email %></p>
+	<p>Email:  <%= @user.email %></p>
 
-<p>Current Location:  <%= @user.location %>, <%= @user.state %></p>
+	<p>Current Location:  <%= @user.location %>, <%= @user.state %></p>
 
-<p>Sex:  <%= @user.gender %></p>
+	<p>Sex:  <%= @user.gender %></p>
 
-<p>Age: <%= @user.age %> years old</p>
+	<p>Age: <%= @user.age %> years old</p>
 
-<p>Relationship Status: <%= @user.relationship %></p>
+	<p>Relationship Status: <%= @user.relationship %></p>
 
-<p>Orientation:  <%= @user.orientation %></p>
+	<p>Orientation:  <%= @user.orientation %></p>
 
-<p>Education:  <%= @user.education.humanize %></p>
+	<p>Education:  <%= @user.education.humanize %></p>
 
-<p>Kids?  <%= @user.kids ? "Yup" : "Nope" %></p>
+	<p>Kids?  <%= @user.kids ? "Yup" : "Nope" %></p>
 
-<p>Drinks?  <%= @user.drinks ? "Yup" : "Nope" %></p>
+	<p>Drinks?  <%= @user.drinks ? "Yup" : "Nope" %></p>
 
-<p>Smokes?  <%= @user.smokes ? "Yup" : "Nope" %></p>
+	<p>Smokes?  <%= @user.smokes ? "Yup" : "Nope" %></p>
 
-<p>Interests:<% @user.interests.each do |int| %><br>
-<%= int.name %>
-<% end %>
-</p>
+	<p>Interests:<% @user.interests.each do |int| %><br>
+		<%= int.name %>
+		<% end %>
+	</p>
 
-<p>The 411 on me:<br><%= @user.description %></p>
+	<p>The 411 on me:<br><%= @user.description %></p>
 
-<%= link_to 'Back', :back %>
+		<%= link_to 'Back', :back %>
 </body>
+</center>
