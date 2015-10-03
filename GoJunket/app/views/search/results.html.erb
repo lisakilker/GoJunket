@@ -3,7 +3,8 @@
 	<p>No GoJunkies match what you've selected.<br>Perhaps narrow your search and try again.</p>
 
 <% else %>
-	<% @users.each do |user| %>
+	<% @user.each do |user| %>
 		<%= link_to user.name, results_path(user) %>
 	<% end %>
 <% end %>
+
