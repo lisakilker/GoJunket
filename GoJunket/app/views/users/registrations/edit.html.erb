@@ -22,18 +22,19 @@
 </div>
 <br>
 <div class="field">
-  <%= f.label :state, "State" %> <em>(Two letter abbreviation)</em><br />
+  <%= f.label :state, "State (Two letter abbreviation)" %><br />
   <%= f.text_field :state, autofocus: true, :maxlength=>2 %>
 </div>
 <br>
 
 <div class="form-group">
-  <%= f.label :is_female, "Gender", class: 'col-sm-2 control-label'  %> <em>(Select the gender you identify as)</em>
+  <%= f.label :is_female, "Gender (Select the gender you identify as)", class: 'col-sm-2 control-label'  %> 
 <div class="col-sm-6">
   <%= f.radio_button :gender, :Girl %> <%= f.label :gender, "Girl" %>
   <%= f.radio_button :gender, :Guy %> <%= f.label :gender, "Guy" %>
 </div>
 </div>
+
 <br>
 
 <div class="form-group">
@@ -102,18 +103,18 @@
 <br>
 
  <div>What are you interested in?<br>
- <% Interest.all.each do |int| %>
- <%= check_box_tag "user_interests_ids_#{int.id}", int.id, (f.object.interests.present? && f.object.interests.include?(int.id)), {:name => "user[interests_ids][]"} %>
- <%= label_tag "user_interests_ids_#{int.id}", int.name %>
- <% end %>
+ <ul class="checkbox-grid"> <% Interest.all.each do |int| %>
+ <li><%= check_box_tag "user_interests_ids_#{int.id}", int.id, (f.object.interests.present? && f.object.interests.include?(int.id)), {:name => "user[interests_ids][]"} %>
+ <%= label_tag "user_interests_ids_#{int.id}", int.name %> <% end %></li>
+</ul>
  </div>
  <br>
-
 <div class="field">
-  <%= f.label :description %><em>(You have 500 characters, go!)</em><br />
+  <%= f.label :description, "The 411 on me (You have 500 characters, go!)" %><br />
   <%= f.text_area :description, autofocus: true, :maxlength=>500 %>
 </div>
 <br>
+
 <div class="field">
   <%= f.label :email, "Update email" %><br />
   <%= f.email_field :email, autofocus: true %>
@@ -126,7 +127,7 @@
   <% end %>
 <br>
 <div class="field">
-  <%= f.label :password, "Update password" %> <i>(Go ahead and leave this blank if you don't need to change your password)</i><br />
+  <%= f.label :password, "Update password (Go ahead and leave this blank if you don't need to change your password)" %> <i></i><br />
   <%= f.password_field :password, autocomplete: "off" %>
 </div>
 
@@ -136,7 +137,7 @@
 </div>
 <br>
 <div class="field">
-  <%= f.label :current_password %> <i>(Required to confirm all your changes)</i><br />
+  <%= f.label :current_password, "Enter current password to confirm all these changes"%> <i></i><br />
   <%= f.password_field :current_password, autocomplete: "off" %>
 </div>
 <br>

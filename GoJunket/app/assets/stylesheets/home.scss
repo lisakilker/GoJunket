@@ -14,7 +14,7 @@ body {
 	font-style: normal;
 	font-variant: small-caps;
 	font-weight: 400;
-	line-height: 15px;
+	line-height: 18px;
 	color: white;
 }
 
@@ -26,7 +26,6 @@ select {
 	font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 	font-style: normal;
 	font-size: 14px;
-	
     background-color: white;
     padding: 1px 0 0 5px;
     width:15%;
@@ -53,5 +52,39 @@ a {
     color: #EDD0A1;
 }
 
+[type="radio"] {
+  content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border-radius: 1em;
+  border: 0.125em solid #fff;
+}
+
+label {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding-left: 2px;
+    margin-right: 30px;
+}
+
+[type="checkbox"] {
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 2px;
+    margin-right: 2px;
+    width: 30px;
+    height: 15px;
+}
+
+ul {
+    -moz-column-count: 4;
+    -moz-column-gap: 20px;
+    -webkit-column-count: 4;
+    -webkit-column-gap: 20px;
+    column-count: 4;
+    column-gap: 20px;
+}
 
 

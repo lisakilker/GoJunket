@@ -1,5 +1,5 @@
 <body>
-<h2>View all GoJunkies</h2>
+<h2>Meet your fellow GoJunkies</h2>
 <% @users.each do |user| %>
 	<li><%= link_to user.name, user_path(user) %></li>
 <% end %>

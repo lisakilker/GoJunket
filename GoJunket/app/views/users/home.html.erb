@@ -7,7 +7,7 @@
 		<%= form_tag(users_path, :method => "get", id: "search-form") do %>
 		<%= text_field_tag :search, params[:search], placeholder: "Name" %>
 		<%= submit_tag "Find GoJunkie", :name => nil %>
-		
+
 		<% end %>
 		<br><br>
 
@@ -16,27 +16,27 @@
 		<div><em>(To select multiple options, hold down the shift key.<br>All fields must have at least one selection.)</em></div><br>
 
 			<%= form_tag(results_path, :method => "get", id: "param_search") do %>
-		<div>I wanna chill with a:</div>
+		<div>I wanna chill with a</div>
 			<%= select_tag("gender", options_for_select([['Guy', 0],['Girl', 1]],@user.gender), multiple: true) %>
 	
 		
-		<div><br>Aged:</div><%= select @object, :min_age, (18..100).to_a %>
+		<div><br>Aged</div><%= select @object, :min_age, (18..100).to_a %>
 			to
 			<%= select @object, :max_age, (18..100).to_a %>
 
 
-		<div><br>Located in the city of:</div>
+		<div><br>Located in the city of</div>
 			<%= text_field_tag :location %>
-		<div><br>In the state of: <em>(Example -> NE)</em>:</div>
+		<div><br>In the state of <em>(Example -> NE)</em></div>
 			<%= text_field_tag :state, params[:search], :maxlength => 2 %>
 
-		<div><br>Who is:</div>
+		<div><br>Who is</div>
 			<%= select_tag("relationship", options_for_select([["Single", 3],["Taken", 4],["Married", 5]],@user.relationship), multiple: true) %>
 
-		<div><br>Whose sexual orientation is:</div>
+		<div><br>Whose sexual orientation is</div>
 			<%= select_tag("orientation", options_for_select([["Straight", 4],["Gay", 5],["Bi", 6]],@user.orientation), multiple: true) %>
 
-		<div><br>Whose highest education level is:</div>
+		<div><br>Whose highest education level is</div>
 			<%= select_tag("education", options_for_select([["High School", 5],["Course Certification", 6],["College", 7],["Grad School", 8],["PhD", 9]],@user.education), multiple: true) %>
 
 		<div><br>Who has kiddos?</div>
