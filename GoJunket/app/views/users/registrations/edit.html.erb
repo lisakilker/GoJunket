@@ -1,3 +1,4 @@
+<body>
 <h2>Make your profile more snazzy, <%= current_user.name.upcase %>!</h2>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'form-horizontal'}) do |f| %>
   <%= devise_error_messages! %>
@@ -19,6 +20,7 @@
   <%= f.label :location, "City" %><br />
   <%= f.text_field :location, autofocus: true %>
 </div>
+<br>
 <div class="field">
   <%= f.label :state, "State" %> <em>(Two letter abbreviation)</em><br />
   <%= f.text_field :state, autofocus: true, :maxlength=>2 %>
@@ -99,7 +101,7 @@
 </div>
 <br>
 
- <div>Interests<br>
+ <div>What are you interested in?<br>
  <% Interest.all.each do |int| %>
  <%= check_box_tag "user_interests_ids_#{int.id}", int.id, (f.object.interests.present? && f.object.interests.include?(int.id)), {:name => "user[interests_ids][]"} %>
  <%= label_tag "user_interests_ids_#{int.id}", int.name %>
@@ -137,14 +139,14 @@
   <%= f.label :current_password %> <i>(Required to confirm all your changes)</i><br />
   <%= f.password_field :current_password, autocomplete: "off" %>
 </div>
-
+<br>
 <div class="actions">
-  <%= f.submit "Update" %>
+  <%= f.submit "Update", :class => 'button'%>
 </div>
 
 <% end %>
 
 
 <p><%= button_to "Deactivate my account", registration_path(resource_name), data: { confirm: "Are you absolutey, positively sure you want to close your account?" }, method: :delete %></p>
-
+</body>
  

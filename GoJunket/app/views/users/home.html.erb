@@ -7,54 +7,49 @@
 		<%= form_tag(users_path, :method => "get", id: "search-form") do %>
 		<%= text_field_tag :search, params[:search], placeholder: "Name" %>
 		<%= submit_tag "Find GoJunkie", :name => nil %>
+		
 		<% end %>
+		<br><br>
 
 <h1>Wanna GoJunket?</h1>
-	<h3>Who, what, where, and when?</h3>
-		<h4><em>(To select multiple options, hold down the shift key)</em></h4>
+	<h2>Who, what, where, and when?</h2>
+		<div><em>(To select multiple options, hold down the shift key.<br>All fields must have at least one selection.)</em></div><br>
 
 			<%= form_tag(results_path, :method => "get", id: "param_search") do %>
-		<p>I wanna chill with a:</p>
+		<div>I wanna chill with a:</div>
 			<%= select_tag("gender", options_for_select([['Guy', 0],['Girl', 1]],@user.gender), multiple: true) %>
-
+	
 		
-		<p>Aged:</p><%= select @object, :min_age, (18..100).to_a %>
+		<div><br>Aged:</div><%= select @object, :min_age, (18..100).to_a %>
 			to
 			<%= select @object, :max_age, (18..100).to_a %>
 
 
-		<p>Located in the city of:</p>
+		<div><br>Located in the city of:</div>
 			<%= text_field_tag :location %>
-		<p>In the state of: <em>(Example -> NE)</em>:</p>
+		<div><br>In the state of: <em>(Example -> NE)</em>:</div>
 			<%= text_field_tag :state, params[:search], :maxlength => 2 %>
 
-		<p>Who is:</p>
+		<div><br>Who is:</div>
 			<%= select_tag("relationship", options_for_select([["Single", 3],["Taken", 4],["Married", 5]],@user.relationship), multiple: true) %>
 
-		<p>Whose sexual orientation is:</p>
+		<div><br>Whose sexual orientation is:</div>
 			<%= select_tag("orientation", options_for_select([["Straight", 4],["Gay", 5],["Bi", 6]],@user.orientation), multiple: true) %>
 
-		<p>Whose highest education level is:</p>
+		<div><br>Whose highest education level is:</div>
 			<%= select_tag("education", options_for_select([["High School", 5],["Course Certification", 6],["College", 7],["Grad School", 8],["PhD", 9]],@user.education), multiple: true) %>
 
-		<p>Who has kiddos?</p>
-			<%= select_tag("kids", options_for_select([['Yes', true],['No', false]],@user.kids), multiple: true) %>
+		<div><br>Who has kiddos?</div>
+			<%= select_tag("kids", options_for_select([['Yup', true],['Nope', false]],@user.kids), multiple: true) %>
 
-		<p>Who drinks?</p>
-			<%= select_tag("drinks", options_for_select([['Yes', true],['No', false]],@user.drinks), multiple: true) %>
+		<div><br>Who drinks?</div>
+			<%= select_tag("drinks", options_for_select([['Yup', true],['Nope', false]],@user.drinks), multiple: true) %>
 
-		<p>Who smokes?</p>
-			<%= select_tag("smokes", options_for_select([['Yes', true],['No', false]],@user.smokes), multiple: true) %>
+		<div><br>Who smokes?</div>
+			<%= select_tag("smokes", options_for_select([['Yup', true],['Nope', false]],@user.smokes), multiple: true) %>
 
-		<p>What would you like this person to be interested in? (Interests)</p>
+		<div><br>What would you like this person to be interested in?</div>
   			<%= select_tag("interest", options_for_select(["Animals", "Art", "Astrology", "Astronomy", "Baseball", "Basketball", "Board Games", "Board Sports", "Boxing", "Casual Sex", "Cats", "Computer Programming", "Cooking", "Cosplay", "Cycling", "Dance", "Drama", "Drawing and Painting", "Drinking", "Dogs", "Eating", "Fashion", "Fishing", "Food", "Football", "Gambling", "Gaming", "Hooping", "Hunting", "Internet", "Jogging", "Legos", "Magic", "Martial Arts", "Movies", "Music", "Napping", "Paintball", "Photography", "Pilates", "Puzzles", "Reading", "Religion", "Rock Climbing", "Sailing", "Sarcasm", "Shooting", "Skateboarding", "Skiing", "Snowboarding", "Soccer", "Sports (General)", "Surfing", "Swimming", "Technology", "Travel", "Video Games", "Writing", "Work", "Yoga"], "Movies"), multiple: true) %>
-	
-
-		<p>What do you feel like doing? (Where?)</p>
-			<%= select( "user", "id", { "Beach" => "1", "Bike Ride" => "Bike Ride", "Coffee" => "Coffee", "Club" => "Club", "Dinner" => "Dinner", "Drinks" => "Drinks", "Gym" => "Gym", "Lunch" => "Lunch", "Play Date" => "Play Date", "Travel" => "Travel", "Other" => "Other"}) %>
-
-		<p>When do you want to do it? (When?)</p>
-			<%= select( "user", "id", { "Now" => "Now", "1:00 am" => "1:00 am", "2:00 am" => "2:00 am", "3:00 am" => "3:00 am", "4:00 am" => "4:00 am", "5:00 am" => "5:00 am", "6:00 am" => "6:00 am", "7:00 am" => "7:00 am", "8:00 am" => "8:00 am", "9:00 am" => "9:00 am", "10:00 am" => "10:00 am", "11:00 am" => "11:00 am", "Noon" =>"Noon", "1:00 pm" => "1:00 pm", "2:00 pm" => "2:00 pm", "3:00 pm" => "3:00 pm", "4:00 pm" => "4:00 pm", "5:00 pm" => "5:00 pm", "6:00 pm" => "6:00 pm", "7:00 pm" => "7:00 pm", "8:00 pm" => "8:00 pm", "9:00 pm" => "9:00 pm", "10:00 pm" => "10:00 pm", "11:00 pm" => "11:00 pm", "Midnight" => "Midnight"}) %>
 		<br><br>
 
 	<button type="submit" form="param_search" value="Submit">Find a GoJunkie</button>
