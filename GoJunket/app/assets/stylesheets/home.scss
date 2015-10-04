@@ -10,7 +10,7 @@ html {
 }
 
 body {
-	font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	font-family: 'Helvetica Neue', sans-serif;
 	font-style: normal;
 	font-size: 16px;
 	font-variant: small-caps;
@@ -22,19 +22,9 @@ body {
 input[type='checkbox'] {
 }
 
-select {
-	background-color: red;
-	font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
-	font-style: normal;
-	font-size: 14px;
-    background-color: white;
-    padding: 1px 0 0 5px;
-    width:15%;
-}
-
 input {
 	background-color: red;
-	font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	font-family: 'Helvetica Neue', sans-serif;
 	background-color: white;
     border: 0px solid;
     color: black;
@@ -42,7 +32,7 @@ input {
 }
 
 button {
-	font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	font-family: 'Helvetica Neue', sans-serif;
 	color: black;
 	font-size: 14px;
 	background-color: white;
@@ -50,8 +40,9 @@ button {
 }
 
 a {
-    color: black;
-    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+    color: #FF3399;
+    text-shadow: -1px 0 white, 0 0px white, 0px 0 white, 0 -1px white;
+    font-size: 18px;
 }
 
 [type="radio"] {
@@ -104,6 +95,7 @@ ul {
 	padding-top: 1px;
 	padding-left: 1px;
 	padding-right: 10px;
+
 }
 
 .header .col-md-4 {
@@ -121,4 +113,67 @@ footer {
 	
 }
 
+.home {
+    background-color: rgba(37, 255, 255, 0.3);
+ 	width: 95%;
+ 	color: #3D1F00;
+ 	font-size: 18px;
+}
 
+.profile {
+    background-color: rgba(151, 5, 158, 0.3);
+ 	width: 35%;
+ 	color: black;
+ 	font-size: 18px;
+}
+
+.users {
+    background-color: rgba(255, 203, 51, 0.3);
+ 	width: 35%;
+ 	color: black;
+ 	font-size: 18px;
+}
+
+.show {
+    background-color: rgba(0, 222, 158, 0.3);
+ 	width: 55%;
+ 	color: black;
+ 	font-size: 18px;
+}
+
+.login {
+    background-color: rgba(0, 255, 111, 0.3);
+ 	width: 35%;
+ 	color: black;
+ 	font-size: 18px;
+}
+
+.join {
+    background-color: rgba(255, 159, 192, 0.3);
+ 	width: 75%;
+ 	color: black;
+ 	font-size: 18px;
+}
+
+.edit {
+    background-color: rgba(255, 83, 0, 0.3);
+ 	width: 99%;
+ 	color: black;
+ 	font-size: 17px;
+}
+
+select {
+	background-color: white;
+	font-family: 'Helvetica Neue', sans-serif;
+	font-style: normal;
+	font-size: 14px;
+    background-color: white;
+    padding: 1px 0 0 5px;
+    width:18%;
+}
+.headline {
+ 	color: black;
+ 	font-size: 23px;
+ 	font-family: ChunkFive, sans-serif;
+ 	color: #FF3399;
+}

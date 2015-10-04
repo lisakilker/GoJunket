@@ -19,8 +19,8 @@
         <%= link_to 'Sign out', destroy_user_session_path, method: 'DELETE' %>
         <% else %>
         
-        <%= link_to 'Sign_up', new_user_registration_path %> |
-        <%= link_to 'Sign_in', new_user_session_path %>
+        <%= link_to 'Join', new_user_registration_path %> |
+        <%= link_to 'Log In', new_user_session_path %>
         <% end %>
       </div>
       <div class="col-md-3" align="right">
@@ -31,7 +31,7 @@
       </div>
       <div id="top_bar"><div class="container-fluid"></div>
       <div class="col-md-4" align="left">
-      <h1>GoJunket</h1><h2>Meet. Go out. Now.</h2></div></div></div>
+      <div class="headline"><h1>GoJunket</h1><h2>Meet. Go out. Now.</h2></div></div></div></div>
         <%= yield %>
     </body>
     <footer><br><br><center>Copyright GoJunket 2015</center></footer>

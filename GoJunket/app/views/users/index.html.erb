@@ -1,8 +1,8 @@
 <br><br><br><center>
-<body>
+<body><div class="users"><br>
 <h2>Meet your fellow GoJunkies</h2>
 <% @users.each do |user| %>
 	<li><%= link_to user.name, user_path(user) %></li>
 <% end %>
-</body>
+</body><br></div>
 </center>

@@ -4,10 +4,7 @@ class Search < ActiveRecord::Base
     	@users ||= find_users(params)
   	end
 
-	def find_users(params)
-
-		# users = User.order("RANDOM()")
-		
+	def find_users(params)		
 		interests = params[:interest] 
 		interests_where_string = "(#{interests.join(', ')})"
 		users = User.joins(:interests).where("interests.name IN (?)", interests)

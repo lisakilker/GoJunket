@@ -1,5 +1,6 @@
 <br><br><br><center>
 <body>
+  <div class="edit"><br>
   <h2>Make your profile more snazzy, <%= current_user.name.upcase %>!</h2>
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'form-horizontal'}) do |f| %>
         <%= devise_error_messages! %>
@@ -30,10 +31,10 @@
     <br>
 
     <div class="form-group">
-        <%= f.label :is_female, "Gender (Select the gender you identify as)", class: 'col-sm-2 control-label'  %>
+        <%= f.label :gender, "Gender (Select the gender you identify as)", class: 'col-sm-2 control-label'  %>
     <div class="col-sm-6">
-        <%= f.radio_button :gender, :Girl %> <%= f.label :gender, "Girl" %>
-        <%= f.radio_button :gender, :Guy %> <%= f.label :gender, "Guy" %>
+        <%= f.radio_button :gender, :guy %> <%= f.label :gender, "Guy" %>
+        <%= f.radio_button :gender, :girl %> <%= f.label :gender, "Girl" %>
     </div>
     </div>
     <br>
@@ -146,7 +147,7 @@
   <div class="actions">
       <%= f.submit "Update", :class => 'button'%>
   </div>
-    <% end %>
+    <% end %><br></div><br>
   <p><%= button_to "Deactivate my account", registration_path(resource_name), data: { confirm: "Are you absolutey, positively sure you want to close your account?" }, method: :delete %></p>
 </body>
 </center>

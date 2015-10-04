@@ -1,5 +1,5 @@
 <br><br><br><center>
-<body>
+<body><div class="profile"><br>
 <h2>Howdy, <%= current_user.name.upcase %>!</h2>
 
 <p><%= image_tag current_user.avatar.url(:thumb) %></p>
@@ -29,8 +29,8 @@
 	<% end %>
 </p>
 
-<p>The 411 on me:<br><%= current_user.description %></p>
-
+<p>The 411 on me:<br><%= current_user.description %></p><br>
+</div>
 	<%= link_to("Edit my profile", edit_user_registration_path)%>
-</body>
+<br></body>
 </center>

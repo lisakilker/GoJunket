@@ -10,13 +10,13 @@ class User < ActiveRecord::Base
 	validates :date_of_birth, presence: true
 	validates :gender, presence: true
 	
-	enum gender: [:Guy, :Girl]
+	enum gender: {guy: 0, girl: 1}
 	
-	enum orientation: [:straight, :gay, :bi]
+	enum orientation: {straight: 0, gay: 1, bi: 2}
 	
-	enum relationship: [:single, :taken, :married]
+	enum relationship: {single: 0, taken: 1, married: 2}
 	
-	enum education: [:high_school, :course_certification, :college, :grad_school, :phd]
+	enum education: {high_school: 0, course_certification: 1, college: 2, grad_school: 3, phd: 4}
 
 	has_and_belongs_to_many :interests
 	accepts_nested_attributes_for :interests, :allow_destroy => true, :reject_if => :all_blank

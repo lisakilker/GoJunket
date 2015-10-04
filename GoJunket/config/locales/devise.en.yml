@@ -14,7 +14,7 @@ en:
       last_attempt: "Dude, did you forget your password?  You only have one more attempt to login before we lock you out of your account.  Choose wisely!"
       not_found_in_database: "Invalid %{authentication_keys} or password."
       timeout: "Did you fall asleep at your computer?  Your session expired. Sign in again."
-      unauthenticated: "Login or sign up to continue."
+      unauthenticated: "You'll need to join or log in to continue."
       unconfirmed: "You have to confirm your email address before doing that."
     mailer:
       confirmation_instructions:

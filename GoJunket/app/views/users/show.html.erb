@@ -1,5 +1,5 @@
 <br><br><br><center>
-<body>
+<body><div class="show"><br>
 	<h2>Wanna GoJunket with <%= @user.name %>?</h2>
 
 	<p><%= image_tag @user.avatar.url(:medium) %></p>
@@ -16,7 +16,7 @@
 
 	<p>Orientation:  <%= @user.orientation %></p>
 
-	<p>Education:  <%= @user.education.humanize %></p>
+	<p>Education:  <%= @user.education %></p>
 
 	<p>Kids?  <%= @user.kids ? "Yup" : "Nope" %></p>
 
@@ -29,7 +29,7 @@
 		<% end %>
 	</p>
 
-	<p>The 411 on me:<br><%= @user.description %></p>
+	<p>The 411 on me:<br><%= @user.description %></p><br></div>
 
 		<%= link_to 'Back', :back %>
 </body>
