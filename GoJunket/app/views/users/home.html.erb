@@ -27,13 +27,13 @@
 				<%= text_field_tag :state, params[:search], :maxlength => 2 %>
 			
 			<div><br>Who is</div>
-				<%= select_tag("relationship", options_for_select([["Single", 3],["Taken", 4],["Married", 5]],@user.relationship), multiple: true) %>
+				<%= select_tag("relationship", options_for_select([["Single", 0],["Taken", 1],["Married", 2]],@user.relationship), multiple: true) %>
 			
 			<div><br>Whose sexual orientation is</div>
-				<%= select_tag("orientation", options_for_select([["Straight", 4],["Gay", 5],["Bi", 6]],@user.orientation), multiple: true) %>
+				<%= select_tag("orientation", options_for_select([["Straight", 0],["Gay", 1],["Bi", 2]],@user.orientation), multiple: true) %>
 			
 			<div><br>Whose highest education level is</div>
-				<%= select_tag("education", options_for_select([["High School", 5],["Course Certification", 6],["College", 7],["Grad School", 8],["PhD", 9]],@user.education), multiple: true) %>
+				<%= select_tag("education", options_for_select([["High School", 0],["Course Certification", 1],["College", 2],["Grad School", 3],["PhD", 4]],@user.education), multiple: true) %>
 			
 			<div><br>Who has kiddos?</div>
 				<%= select_tag("kids", options_for_select([['Yup', true],['Nope', false]],@user.kids), multiple: true) %>
