@@ -5,7 +5,7 @@ class Search < ActiveRecord::Base
   	end
 
 	def find_users(params)		
-		interests = params[:interest] 
+		interests = params[:interests] 
 		interests_where_string = "(#{interests.join(', ')})"
 		users = User.joins(:interests).where("interests.name IN (?)", interests)
 		users = users.uniq
