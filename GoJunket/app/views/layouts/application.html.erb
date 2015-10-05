@@ -7,32 +7,30 @@
       <%= csrf_meta_tags %>
   </head>
   <body>
-    <div class="header">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <div id="top_bar"><div class="container-fluid"></div>
-      <div class="col-md-3" align="right">
-        <% if user_signed_in? %>
-        
-        <%= link_to 'Home', root_path %>
-        <%= link_to 'My profile', profile_path %>
-        <%= link_to 'Sign out', destroy_user_session_path, method: 'DELETE' %>
-        <% else %>
-        
-        <%= link_to 'Join', new_user_registration_path %> |
-        <%= link_to 'Log In', new_user_session_path %>
-        <% end %>
-      </div>
-      <div class="col-md-3" align="right">
-        <%= form_tag(users_path, :method => "get", id: "search-form") do %>
-        <%= text_field_tag :search, params[:search], placeholder: "Name" %>
-        <%= submit_tag "Find GoJunkie", :name => nil %>
-        <% end %>
-      </div>
-      <div id="top_bar"><div class="container-fluid"></div>
-      <div class="col-md-4" align="left">
-      <div class="headline"><h1>GoJunket</h1><h2>Meet. Go out. Now.</h2></div></div></div></div>
-        <%= yield %>
+  <div class="page-header" style="clear: both">
+   <h1 style="float: left">GoJunket</h1>
+           <h3 style="float: right"> <% if user_signed_in? %>
+            <%= link_to 'Home', root_path %>
+            <%= link_to 'My profile', profile_path %>
+            <%= link_to 'Sign out', destroy_user_session_path, method: 'DELETE' %>
+            <% else %>
+            <%= link_to 'Join', new_user_registration_path %> |
+            <%= link_to 'Log In', new_user_session_path %>
+            <% end %></h3>
+        </div>
+        <div class="search_bar" align="right">
+            <%= form_tag(users_path, :method => "get", id: "search-form") do %>
+            <%= text_field_tag :search, params[:search], placeholder: "Name" %>
+            <%= submit_tag "Find GoJunkie", :name => nil %>
+            <% end %>
+        </div>
+        </div>
+          <p class="notice" align="center"><%= notice %></p>
+          <p class="alert" align="center"><%= alert %></p>
+        <div id="top_bar" align="center"><div class="container-fluid"></div>
+        </div></div>
+      </div></div></div>
+        </div><%= yield %>
     </body>
     <footer><br><br><center>Copyright GoJunket 2015</center></footer>
   </html>
