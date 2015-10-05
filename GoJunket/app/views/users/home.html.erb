@@ -14,7 +14,7 @@
 			<br>
 				<%= form_tag(results_path, :method => "get", id: "param_search") do %>
 				I wanna chill with a<br>
-				<%= select_tag(:gender, options_for_select(User.genders.to_a), :style => "width:55px", multiple: true) %>
+				<%= select_tag(:gender, options_for_select(User.genders.to_a), :style => "width:55px", :style=>"height:38px", multiple: true) %>
 			<br>
 			<br>Aged<br><%= select @age, :min_age, (18..100).to_a %>
 				to<%= select @age, :max_age, (18..100).to_a %>
@@ -26,22 +26,22 @@
 				<%= text_field_tag :state, params[:search], :maxlength => 2 %>
 			
 			<div><br>Who is</div>
-				<%= select_tag(:relationship, options_for_select(User.relationships.to_a), :style => "width:75px", multiple: true) %>
+				<%= select_tag(:relationship, options_for_select(User.relationships.to_a), :style => "width:75px", :style=>"height:55px",  multiple: true) %>
 			
 			<div><br>Whose sexual orientation is</div>
-				<%= select_tag(:orientation, options_for_select(User.orientations.to_a), :style => "width:75px", multiple: true) %>
+				<%= select_tag(:orientation, options_for_select(User.orientations.to_a), :style => "width:75px", :style=>"height:55px",  multiple: true) %>
 			
 			<div><br>Whose highest education level is</div>
 				<%= select_tag(:education, options_for_select(User.educations.to_a), :style => "width:150px", multiple: true) %>
 			
 			<div><br>Who has kiddos?</div>
-				<%= select_tag(:kids, options_for_select([['Yup', true], ['Nope', false]]), :style => "width:75px", multiple: true) %>
+				<%= select_tag(:kids, options_for_select([['Yup', true], ['Nope', false]]), :style => "width:75px", :style=>"height:38px",  multiple: true) %>
 			
 			<div><br>Who drinks?</div>
-				<%= select_tag(:drinks, options_for_select([['Yup', true], ['Nope', false]]), :style => "width:75px", multiple: true) %>
+				<%= select_tag(:drinks, options_for_select([['Yup', true], ['Nope', false]]), :style => "width:75px", :style=>"height:38px",  multiple: true) %>
 			
 			<div><br>Who smokes?</div>
-				<%= select_tag(:smokes, options_for_select([['Yup', true], ['Nope', false]]), :style => "width:75px", multiple: true) %>
+				<%= select_tag(:smokes, options_for_select([['Yup', true], ['Nope', false]]), :style => "width:75px", :style=>"height:38px",  multiple: true) %>
 			
 			<div><br>What would you like this person to be interested in?</div>
 				<%= select_tag(:interests, options_for_select(["Animals", "Art", "Astrology", "Astronomy", "Baseball", "Basketball", "Board Games", "Board Sports", "Boxing", "Casual Sex", "Cats", "Computer Programming", "Cooking", "Cosplay", "Cycling", "Dance", "Drama", "Drawing and Painting", "Drinking", "Dogs", "Eating", "Fashion", "Fishing", "Food", "Football", "Gambling", "Gaming", "Hooping", "Hunting", "Internet", "Jogging", "Legos", "Magic", "Martial Arts", "Movies", "Music", "Napping", "Paintball", "Photography", "Pilates", "Puzzles", "Reading", "Religion", "Rock Climbing", "Sailing", "Sarcasm", "Shooting", "Skateboarding", "Skiing", "Snowboarding", "Soccer", "Sports (General)", "Surfing", "Swimming", "Technology", "Travel", "Video Games", "Writing", "Work", "Yoga"]), :style => "width:175px", multiple: true) %>
