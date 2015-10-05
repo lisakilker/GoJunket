@@ -9,14 +9,14 @@
   <body>
     <div class="page-header" style="clear: both">
       <h1 style="float: left">GoJunket</h1>
-      <h3 style="float: right"> <% if user_signed_in? %>
-        <%= link_to 'Home', root_path %>
-        <%= link_to 'My profile', profile_path %>
+      <h1 style="float: right"> <% if user_signed_in? %>
+        <%= link_to 'Home', root_path %> |
+        <%= link_to 'My profile', profile_path %> |
         <%= link_to 'Sign out', destroy_user_session_path, method: 'DELETE' %>
         <% else %>
         <%= link_to 'Join', new_user_registration_path %> |
         <%= link_to 'Log In', new_user_session_path %>
-        <% end %></h3>
+        <% end %></h1>
     </div>
     <div class="search_bar" align="right">
         <%= form_tag(users_path, :method => "get", id: "search-form") do %>

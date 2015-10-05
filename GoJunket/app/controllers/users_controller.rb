@@ -29,6 +29,14 @@ class UsersController < ApplicationController
       @users = User.all.shuffle
     end
   end
+
+   def sender
+      @user = User.find(params[:id])
+    end
+
+    def recipient
+      @user = User.find(params[:id])
+    end
 end
 
 

@@ -2,10 +2,16 @@ Rails.application.routes.draw do
   
   root to: 'users#home'
   devise_for :users, controllers: { registrations: "users/registrations" }
-  resources :users, only: [:show, :index]
+  resources :users, only: [:show, :index] do
+  resources :messages, only: [:index, :show, :destroy]
+  end
   get '/profile', to: 'users#profile'
   get '/results', to: 'search#results'
-  
+  resources :users do
+  get :profile
+  resources :messages, only: [:new, :create] #-> domain.com/users/:user_id/messages/new
+  end
+   
 end
 
 
