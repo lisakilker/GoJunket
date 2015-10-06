@@ -15,9 +15,9 @@ class Search < ActiveRecord::Base
 		users = users.where(orientation: params[:orientation]) if params[:orientation].present?
 		users = users.where(education: params[:education]) if params[:education].present?
 		users = users.where(relationship: params[:relationship]) if params[:relationship].present?
-		users = users.where(kids: params[:kids]) if params[:kids].present?
-		users = users.where(drinks: params[:drinks]) if params[:drinks].present?
-		users = users.where(smokes: params[:smokes]) if params[:smokes].present?
+		users = users.where(kids: params[:kids][0] == "true") if params[:kids].present?
+		users = users.where(drinks: params[:drinks][0] == "true") if params[:drinks].present?
+		users = users.where(smokes: params[:smokes][0] == "true") if params[:smokes].present?
 		
 		
 		if params[:min_age].present? && params[:max_age].present?

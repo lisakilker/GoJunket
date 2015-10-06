@@ -16,8 +16,8 @@
 				I wanna chill with a<br>
 				<%= select_tag(:gender, options_for_select(User.genders.to_a), :style => "width:55px", :style=>"height:38px", multiple: true) %>
 			<br>
-			<br>Aged<br><%= select @age, :min_age, (18..100).to_a %>
-				to<%= select @age, :max_age, (18..100).to_a %>
+			<br>Aged<br><%= select @age, :min_age, (18..100).to_a, include_blank: true  %>
+				to<%= select @age, :max_age, (18..100).to_a, include_blank: true %>
 			
 			<div><br>Located in the city of</div>
 				<%= text_field_tag :location %>
