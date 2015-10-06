@@ -1,5 +1,25 @@
-<h2>Inbox</h2>
+<br>
+<br>
+<br>
+<center>
+<body><div class="inbox"><br>
+<h2>Your GoJunket Inbox</h2>
 <% @messages.each do |message| %>
-   <%= message.content %>
+   <%= link_to(message.sender.name, user_path(message.sender)) %><br>
+   
+   Would like to: <%= message.activities %><br>
+   
+   At: <%= message.times %><br>
+   
+   Note: <%= message.content %><br>
+   
+   <%= submit_tag "Delete" %>
+   
+   <br>---------------<br>
 <% end %>
+<br>
+</div>
+</body>
+</center>
+
 

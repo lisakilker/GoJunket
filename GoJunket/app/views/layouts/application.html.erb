@@ -12,6 +12,7 @@
       <h1 style="float: right"> <% if user_signed_in? %>
         <%= link_to 'Home', root_path %> |
         <%= link_to 'My profile', profile_path %> |
+        <%= link_to 'Inbox', user_messages_path(current_user.id) %> |
         <%= link_to 'Sign out', destroy_user_session_path, method: 'DELETE' %>
         <% else %>
         <%= link_to 'Join', new_user_registration_path %> |

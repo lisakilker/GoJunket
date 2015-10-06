@@ -126,26 +126,26 @@ footer {
 .home {
   background-color: rgba(37, 255, 255, 0.3);
  	width: 50%;
- 	color: #3D1F00;
+ 	color: black;
  	font-size: 18px;
 }
 
 .profile {
-  background-color: rgba(151, 5, 158, 0.3);
+  background-color: rgba(255, 0, 255, 0.3);
  	width: 35%;
  	color: black;
  	font-size: 18px;
 }
 
 .users {
-  background-color: rgba(255, 203, 51, 0.3);
+  background-color: rgba(255, 255, 0, 0.4);
  	width: 45%;
  	color: black;
  	font-size: 18px;
 }
 
 .show {
-  background-color: rgba(255, 107, 69, 0.3);
+  background-color: rgba(0, 126, 255, 0.4);
  	width: 55%;
  	color: black;
  	font-size: 18px;
@@ -226,6 +226,21 @@ select {
   border-radius: 50%;
 }
 
+.inbox {
+  background-color: rgba(255, 106, 0, 0.5);
+  width: 50%;
+  height: 50%;
+  color: black;
+  font-size: 18px;
+}
+
+.message {
+  background-color: rgba(120, 255, 44, 0.5);
+  width: 50%;
+  height: 50%;
+  color: black;
+  font-size: 18px;
+}
 
 
 

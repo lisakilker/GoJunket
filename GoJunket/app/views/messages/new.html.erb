@@ -1,15 +1,28 @@
-<h2>Create Message</h2>
-
-	<%= form_for Message.new do |f| %>
-	<%= f.text_field :message %>
-	<%= f.hidden_field :id, :value => @current.user %>
-	<%= f.submit %>
+<br>
+<br>
+<br>
+<center>
+<body><div class="message"><br>
+<h2>GoJunket with <%= @user.name %></h2>
+	<%= form_for [@user, @message] do |f| %>
 	
-	<p>What do you feel like doing? (Where?)</p>
-		<%= select( "user", "id", { "Beach" => "Beach", "Bike Ride" => "Bike Ride", "Coffee" => "Coffee", "Club" => "Club", "Dinner" => "Dinner", "Drinks" => "Drinks", "Gym" => "Gym", "Lunch" => "Lunch", "Play Date" => "Play Date", "Travel" => "Travel", "Other" => "Other"}) %>
-
-	<p>When do you want to do it? (When?)</p>
-		<%= select( "user", "id", { "Now" => "Now", "1:00 am" => "1:00 am", "2:00 am" => "2:00 am", "3:00 am" => "3:00 am", "4:00 am" => "4:00 am", "5:00 am" => "5:00 am", "6:00 am" => "6:00 am", "7:00 am" => "7:00 am", "8:00 am" => "8:00 am", "9:00 am" => "9:00 am", "10:00 am" => "10:00 am", "11:00 am" => "11:00 am", "Noon" =>"Noon", "1:00 pm" => "1:00 pm", "2:00 pm" => "2:00 pm", "3:00 pm" => "3:00 pm", "4:00 pm" => "4:00 pm", "5:00 pm" => "5:00 pm", "6:00 pm" => "6:00 pm", "7:00 pm" => "7:00 pm", "8:00 pm" => "8:00 pm", "9:00 pm" => "9:00 pm", "10:00 pm" => "10:00 pm", "11:00 pm" => "11:00 pm", "Midnight" => "Midnight"}) %>
-
-  <div><%= f.submit "Send" %></div>
-  <% end %>
+	<div class="form-group">
+	<p>What do you feel like doing?</p>
+		<%= f.select(:activities, options_for_select(Message.activities.to_a), :style => "width:135px") %>
+	<br>
+	<div class="form-group">
+	<p>When do you want to do it?</p>
+		<%= f.select(:times, options_for_select(Message.times.to_a), :style => "width:95px") %>
+	</div><br>
+	  <div class="field">
+        <%= f.label :content, "Add a note (optional)"%><br>
+        <%= f.text_area :content, autofocus: true, :maxlength=>500 %>
+    </div>
+	</div>
+	<br>
+ 	<div><%= f.submit "Send" %></div>
+  	<% end %>
+	<br>
+	</div>
+</body>
+</center>

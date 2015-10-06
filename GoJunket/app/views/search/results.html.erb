@@ -1,14 +1,16 @@
 <br><br><br><center>
 <body><div class="results"><br>
 	<% if @users.empty? %>
-		<h2>No GoJunkies match what you've selected.<br>Perhaps narrow your search and try again.</h2>
+		<h2>No GoJunkies match what you've selected.<br><br>Make sure you have selected at least one "interest" and try again.</h2>
 
 	<% else %>
 		<% @users.each do |user| %>
 			<li><%= link_to user.name, user_path(user) %></li>
-			<%= image_tag user.avatar.url(:thumb), :style => "border: 1px solid Cyan" %>
+			<%= image_tag user.avatar.url(:thumb), :style => "border: 1px solid Cyan" %><br>
 		<% end %>
 	<% end %>
-</div></body>
+<br>
+</div>
+</body>
 </center>
 
